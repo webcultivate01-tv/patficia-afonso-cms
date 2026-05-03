@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services – PAGraphics</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: '#6d28d9', accent: '#7c3aed' },
+          fontFamily: { sans: ['Inter', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    html { scroll-behavior: smooth; }
+    .gradient-text { background: linear-gradient(135deg,#6d28d9,#a855f7); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .card-hover { transition: transform .25s, box-shadow .25s; }
+    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(109,40,217,.12); }
+    .nav-link { position:relative; }
+    .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:#6d28d9; transition:width .3s; }
+    .nav-link:hover::after { width:100%; }
+  </style>
+</head>
+<body class="font-sans bg-white text-gray-800 overflow-x-hidden">
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="text-2xl font-black text-gray-900">PA<span class="gradient-text">Graphics</span></a>
+      <ul class="hidden md:flex items-center gap-8">
+        <li><a href="index.html" class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm transition-colors">Home</a></li>
+        <li><a href="about.html" class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm transition-colors">About</a></li>
+        <li><a href="services.html" class="nav-link text-primary font-semibold text-sm">Services</a></li>
+        <li><a href="portfolio.html" class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm transition-colors">Portfolio</a></li>
+        <li><a href="contact.html" class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm transition-colors">Contact</a></li>
+        <li><a href="contact.html" class="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-accent transition-colors shadow-lg shadow-purple-200">Get Started</a></li>
+      </ul>
+      <button id="hamburger" class="md:hidden text-gray-700 text-xl"><i class="fas fa-bars"></i></button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-4">
+      <a href="index.html" class="text-gray-600 font-medium text-sm">Home</a>
+      <a href="about.html" class="text-gray-600 font-medium text-sm">About</a>
+      <a href="services.html" class="text-primary font-semibold text-sm">Services</a>
+      <a href="portfolio.html" class="text-gray-600 font-medium text-sm">Portfolio</a>
+      <a href="contact.html" class="text-gray-600 font-medium text-sm">Contact</a>
+      <a href="contact.html" class="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold text-center">Get Started</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="pt-32 pb-20 bg-gradient-to-br from-purple-50 to-white">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <span class="bg-purple-100 text-primary px-4 py-1.5 rounded-full text-xs font-semibold">What We Offer</span>
+      <h1 class="text-5xl font-black text-gray-900 mt-5 mb-5">Our <span class="gradient-text">Services</span></h1>
+      <p class="text-gray-500 text-lg max-w-2xl mx-auto leading-relaxed">From brand identity to motion graphics, we offer a full suite of creative services to help your organization shine.</p>
+    </div>
+  </section>
+
+  <!-- SERVICES GRID -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <!-- Graphic Design -->
+        <div class="bg-gray-50 rounded-3xl p-10 card-hover border border-gray-100 flex gap-7">
+          <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center flex-shrink-0"><i class="fas fa-paint-brush text-primary text-2xl"></i></div>
+          <div>
+            <h3 class="text-xl font-black text-gray-900 mb-3">Graphic Design</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">Complete visual identity solutions from concept to final delivery. We create logos, flyers, banners, social media kits, and full brand identity packages that make lasting impressions.</p>
+            <ul class="space-y-1.5 text-sm text-gray-500">
+              <li class="flex items-center gap-2"><i class="fas fa-check text-primary text-xs"></i> Logo & Brand Identity</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-primary text-xs"></i> Flyers & Posters</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-primary text-xs"></i> Social Media Graphics</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-primary text-xs"></i> Banner & Signage Design</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Motion Graphics -->
+        <div class="bg-gradient-to-br from-primary to-purple-500 rounded-3xl p-10 card-hover flex gap-7 text-white">
+          <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center flex-shrink-0"><i class="fas fa-video text-white text-2xl"></i></div>
+          <div>
+            <h3 class="text-xl font-black mb-3">Motion Graphics</h3>
+            <p class="text-purple-100 text-sm leading-relaxed mb-4">Bring your brand to life with stunning animations. From sermon bumpers to cinematic title sequences, we create motion content that captivates audiences.</p>
+            <ul class="space-y-1.5 text-sm text-purple-100">
+              <li class="flex items-center gap-2"><i class="fas fa-check text-white text-xs"></i> Animated Intros & Outros</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-white text-xs"></i> Sermon Bumpers</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-white text-xs"></i> Lyric Videos</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-white text-xs"></i> Cinematic Title Sequences</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Church Media -->
+        <div class="bg-gray-50 rounded-3xl p-10 card-hover border border-gray-100 flex gap-7">
+          <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center flex-shrink-0"><i class="fas fa-church text-primary text-2xl"></i></div>
+          <div>
+            <h3 class="text-xl font-black text-gray-900 mb-3">Church Media</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">Specialized design solutions for churches and ministries. We understand the unique visual language of faith communities and create media that resonates.</p>
+            <ul class="space-y-1.5 text-sm text-gray-500">
+              <li class="flex items-center gap-2"><i class="fas fa-check text-primary text-xs"></i> Worship Backgrounds</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-primary text-xs"></i> Sermon Slide Decks</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-primary text-xs"></i> Event Graphics</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-primary text-xs"></i> Bulletin & Newsletter Design</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Web Design -->
+        <div class="bg-gray-50 rounded-3xl p-10 card-hover border border-gray-100 flex gap-7">
+          <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center flex-shrink-0"><i class="fas fa-globe text-primary text-2xl"></i></div>
+          <div>
+            <h3 class="text-xl font-black text-gray-900 mb-3">Web Design</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">Modern, responsive websites that convert visitors into loyal followers. We design with purpose — every layout, color, and element serves your goals.</p>
+            <ul class="space-y-1.5 text-sm text-gray-500">
+              <li class="flex items-center gap-2"><i class="fas fa-check text-primary text-xs"></i> Landing Pages</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-primary text-xs"></i> Church Websites</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-primary text-xs"></i> Business Websites</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-primary text-xs"></i> UI/UX Design</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Social Media -->
+        <div class="bg-gray-50 rounded-3xl p-10 card-hover border border-gray-100 flex gap-7">
+          <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center flex-shrink-0"><i class="fas fa-photo-film text-primary text-2xl"></i></div>
+          <div>
+            <h3 class="text-xl font-black text-gray-900 mb-3">Social Media Design</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">Scroll-stopping content that builds your online presence. We create branded templates and content packages that keep your feed consistent and engaging.</p>
+            <ul class="space-y-1.5 text-sm text-gray-500">
+              <li class="flex items-center gap-2"><i class="fas fa-check text-primary text-xs"></i> Instagram & Facebook Posts</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-primary text-xs"></i> Story Templates</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-primary text-xs"></i> Content Calendars</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-primary text-xs"></i> Branded Template Packs</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Print Design -->
+        <div class="bg-gray-50 rounded-3xl p-10 card-hover border border-gray-100 flex gap-7">
+          <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center flex-shrink-0"><i class="fas fa-print text-primary text-2xl"></i></div>
+          <div>
+            <h3 class="text-xl font-black text-gray-900 mb-3">Print Design</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">Professional print-ready designs that make a physical impact. From business cards to large-format banners, we deliver files ready for any printer.</p>
+            <ul class="space-y-1.5 text-sm text-gray-500">
+              <li class="flex items-center gap-2"><i class="fas fa-check text-primary text-xs"></i> Business Cards</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-primary text-xs"></i> Brochures & Booklets</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-primary text-xs"></i> Large Format Banners</li>
+              <li class="flex items-center gap-2"><i class="fas fa-check text-primary text-xs"></i> Conference Materials</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <span class="bg-purple-100 text-primary px-4 py-1.5 rounded-full text-xs font-semibold">How We Work</span>
+        <h2 class="text-4xl font-black text-gray-900 mt-4 mb-3">Our <span class="gradient-text">Process</span></h2>
+        <p class="text-gray-500 max-w-xl mx-auto">A simple, transparent process designed to get you results fast.</p>
+      </div>
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4 text-white font-black text-xl">01</div>
+          <h3 class="font-bold text-gray-900 mb-2">Discovery</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">We learn about your brand, goals, and vision through a detailed brief.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-purple-200 rounded-2xl flex items-center justify-center mx-auto mb-4 text-primary font-black text-xl">02</div>
+          <h3 class="font-bold text-gray-900 mb-2">Concept</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">We develop creative concepts and present initial design directions.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-purple-200 rounded-2xl flex items-center justify-center mx-auto mb-4 text-primary font-black text-xl">03</div>
+          <h3 class="font-bold text-gray-900 mb-2">Refine</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">We refine based on your feedback until the design is perfect.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4 text-white font-black text-xl">04</div>
+          <h3 class="font-bold text-gray-900 mb-2">Deliver</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Final files delivered in all formats you need, ready to use.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <span class="bg-purple-100 text-primary px-4 py-1.5 rounded-full text-xs font-semibold">Pricing</span>
+        <h2 class="text-4xl font-black text-gray-900 mt-4 mb-3">Simple, <span class="gradient-text">Transparent</span> Pricing</h2>
+        <p class="text-gray-500 max-w-xl mx-auto">Choose the plan that fits your needs. No hidden fees, ever.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100 card-hover">
+          <h3 class="font-black text-gray-900 text-xl mb-1">Starter</h3>
+          <p class="text-gray-500 text-sm mb-6">Perfect for small projects</p>
+          <div class="mb-6"><span class="text-4xl font-black gradient-text">$299</span><span class="text-gray-400 text-sm">/project</span></div>
+          <ul class="space-y-3 text-sm text-gray-600 mb-8">
+            <li class="flex items-center gap-2"><i class="fas fa-check text-primary text-xs"></i> 1 Design Concept</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check text-primary text-xs"></i> 3 Revisions</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check text-primary text-xs"></i> Source Files Included</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check text-primary text-xs"></i> 5-Day Delivery</li>
+            <li class="flex items-center gap-2 text-gray-300"><i class="fas fa-times text-xs"></i> Priority Support</li>
+          </ul>
+          <a href="contact.html" class="block text-center border border-primary text-primary py-3 rounded-full font-semibold text-sm hover:bg-primary hover:text-white transition-all">Get Started</a>
+        </div>
+        <div class="bg-gradient-to-br from-primary to-purple-500 rounded-3xl p-8 card-hover text-white relative">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-yellow-400 text-gray-900 text-xs font-bold px-4 py-1 rounded-full">Most Popular</div>
+          <h3 class="font-black text-xl mb-1">Professional</h3>
+          <p class="text-purple-200 text-sm mb-6">For growing organizations</p>
+          <div class="mb-6"><span class="text-4xl font-black">$699</span><span class="text-purple-200 text-sm">/project</span></div>
+          <ul class="space-y-3 text-sm text-purple-100 mb-8">
+            <li class="flex items-center gap-2"><i class="fas fa-check text-white text-xs"></i> 3 Design Concepts</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check text-white text-xs"></i> Unlimited Revisions</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check text-white text-xs"></i> Source Files Included</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check text-white text-xs"></i> 3-Day Delivery</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check text-white text-xs"></i> Priority Support</li>
+          </ul>
+          <a href="contact.html" class="block text-center bg-white text-primary py-3 rounded-full font-bold text-sm hover:bg-purple-50 transition-all">Get Started</a>
+        </div>
+        <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100 card-hover">
+          <h3 class="font-black text-gray-900 text-xl mb-1">Enterprise</h3>
+          <p class="text-gray-500 text-sm mb-6">For large-scale needs</p>
+          <div class="mb-6"><span class="text-4xl font-black gradient-text">Custom</span></div>
+          <ul class="space-y-3 text-sm text-gray-600 mb-8">
+            <li class="flex items-center gap-2"><i class="fas fa-check text-primary text-xs"></i> Unlimited Concepts</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check text-primary text-xs"></i> Unlimited Revisions</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check text-primary text-xs"></i> Dedicated Designer</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check text-primary text-xs"></i> Rush Delivery Available</li>
+            <li class="flex items-center gap-2"><i class="fas fa-check text-primary text-xs"></i> 24/7 Priority Support</li>
+          </ul>
+          <a href="contact.html" class="block text-center border border-primary text-primary py-3 rounded-full font-semibold text-sm hover:bg-primary hover:text-white transition-all">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-gradient-to-br from-primary to-purple-600">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-black text-white mb-4">Not Sure Which Service You Need?</h2>
+      <p class="text-purple-200 mb-8 text-lg">Let's talk. We'll help you figure out the best solution for your goals.</p>
+      <a href="contact.html" class="bg-white text-primary px-8 py-4 rounded-full font-bold text-sm hover:bg-purple-50 transition-all shadow-xl inline-block">Book a Free Consultation →</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-white">
+    <div class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-4 gap-10">
+      <div class="md:col-span-2">
+        <a href="index.html" class="text-2xl font-black">PA<span class="gradient-text">Graphics</span></a>
+        <p class="text-gray-400 text-sm mt-3 mb-5 leading-relaxed max-w-xs">Crafting visual stories that inspire, transform, and leave a lasting impression.</p>
+        <div class="flex gap-3">
+          <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all text-sm"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all text-sm"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all text-sm"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all text-sm"><i class="fab fa-behance"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-bold text-sm mb-4">Services</h4>
+        <ul class="space-y-2 text-gray-400 text-sm">
+          <li><a href="services.html" class="hover:text-white transition-colors">Graphic Design</a></li>
+          <li><a href="services.html" class="hover:text-white transition-colors">Motion Graphics</a></li>
+          <li><a href="services.html" class="hover:text-white transition-colors">Church Media</a></li>
+          <li><a href="services.html" class="hover:text-white transition-colors">Web Design</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-sm mb-4">Company</h4>
+        <ul class="space-y-2 text-gray-400 text-sm">
+          <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="portfolio.html" class="hover:text-white transition-colors">Portfolio</a></li>
+          <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+          <li><a href="../index.php?page=login" class="hover:text-white transition-colors">Admin Login</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/10 py-5 text-center text-gray-500 text-xs">© 2025 PAGraphics. All rights reserved.</div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio – PAGraphics</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: '#6d28d9', accent: '#7c3aed' },
+          fontFamily: { sans: ['Inter', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    html { scroll-behavior: smooth; }
+    .gradient-text { background: linear-gradient(135deg,#6d28d9,#a855f7); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .card-hover { transition: transform .25s, box-shadow .25s; }
+    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(109,40,217,.12); }
+    .nav-link { position:relative; }
+    .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:#6d28d9; transition:width .3s; }
+    .nav-link:hover::after { width:100%; }
+    .port-item .overlay { opacity:0; transition:opacity .3s; }
+    .port-item:hover .overlay { opacity:1; }
+    .filter-btn.active { background:#6d28d9; color:#fff; }
+    .port-item { transition: all .3s; }
+    .port-item.hidden-item { display:none; }
+  </style>
+</head>
+<body class="font-sans bg-white text-gray-800 overflow-x-hidden">
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="text-2xl font-black text-gray-900">PA<span class="gradient-text">Graphics</span></a>
+      <ul class="hidden md:flex items-center gap-8">
+        <li><a href="index.html" class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm transition-colors">Home</a></li>
+        <li><a href="about.html" class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm transition-colors">About</a></li>
+        <li><a href="services.html" class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm transition-colors">Services</a></li>
+        <li><a href="portfolio.html" class="nav-link text-primary font-semibold text-sm">Portfolio</a></li>
+        <li><a href="contact.html" class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm transition-colors">Contact</a></li>
+        <li><a href="contact.html" class="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-accent transition-colors shadow-lg shadow-purple-200">Get Started</a></li>
+      </ul>
+      <button id="hamburger" class="md:hidden text-gray-700 text-xl"><i class="fas fa-bars"></i></button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-4">
+      <a href="index.html" class="text-gray-600 font-medium text-sm">Home</a>
+      <a href="about.html" class="text-gray-600 font-medium text-sm">About</a>
+      <a href="services.html" class="text-gray-600 font-medium text-sm">Services</a>
+      <a href="portfolio.html" class="text-primary font-semibold text-sm">Portfolio</a>
+      <a href="contact.html" class="text-gray-600 font-medium text-sm">Contact</a>
+      <a href="contact.html" class="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold text-center">Get Started</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="pt-32 pb-20 bg-gradient-to-br from-purple-50 to-white">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <span class="bg-purple-100 text-primary px-4 py-1.5 rounded-full text-xs font-semibold">Our Work</span>
+      <h1 class="text-5xl font-black text-gray-900 mt-5 mb-5">Creative <span class="gradient-text">Portfolio</span></h1>
+      <p class="text-gray-500 text-lg max-w-2xl mx-auto leading-relaxed">A showcase of our best work across branding, motion, church media, and digital design.</p>
+    </div>
+  </section>
+
+  <!-- FILTER + GRID -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <!-- Filter Buttons -->
+      <div class="flex flex-wrap justify-center gap-3 mb-12">
+        <button class="filter-btn active px-5 py-2 rounded-full text-sm font-semibold border border-gray-200 hover:border-primary transition-all" data-filter="all">All Projects</button>
+        <button class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-gray-200 hover:border-primary transition-all text-gray-600" data-filter="branding">Branding</button>
+        <button class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-gray-200 hover:border-primary transition-all text-gray-600" data-filter="motion">Motion</button>
+        <button class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-gray-200 hover:border-primary transition-all text-gray-600" data-filter="church">Church Media</button>
+        <button class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-gray-200 hover:border-primary transition-all text-gray-600" data-filter="social">Social Media</button>
+        <button class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-gray-200 hover:border-primary transition-all text-gray-600" data-filter="web">Web Design</button>
+      </div>
+
+      <!-- Portfolio Grid -->
+      <div class="grid md:grid-cols-3 gap-6" id="portfolioGrid">
+
+        <div class="port-item rounded-3xl overflow-hidden relative group h-64 card-hover" data-cat="branding" style="background:linear-gradient(135deg,#6d28d9,#a855f7)">
+          <div class="absolute inset-0 flex items-center justify-center"><i class="fas fa-crown text-white/20 text-7xl"></i></div>
+          <div class="overlay absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
+            <span class="text-purple-300 text-xs font-semibold uppercase tracking-widest">Branding</span>
+            <h4 class="text-white font-bold text-lg mt-1">Elevate Church Rebrand</h4>
+            <p class="text-gray-300 text-xs mt-1">Full brand identity overhaul</p>
+          </div>
+        </div>
+
+        <div class="port-item rounded-3xl overflow-hidden relative group h-64 card-hover" data-cat="motion" style="background:linear-gradient(135deg,#0ea5e9,#6366f1)">
+          <div class="absolute inset-0 flex items-center justify-center"><i class="fas fa-film text-white/20 text-7xl"></i></div>
+          <div class="overlay absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
+            <span class="text-blue-300 text-xs font-semibold uppercase tracking-widest">Motion</span>
+            <h4 class="text-white font-bold text-lg mt-1">Sunday Opener Pack</h4>
+            <p class="text-gray-300 text-xs mt-1">Animated church intro series</p>
+          </div>
+        </div>
+
+        <div class="port-item rounded-3xl overflow-hidden relative group h-64 card-hover" data-cat="social" style="background:linear-gradient(135deg,#f59e0b,#ef4444)">
+          <div class="absolute inset-0 flex items-center justify-center"><i class="fas fa-hashtag text-white/20 text-7xl"></i></div>
+          <div class="overlay absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
+            <span class="text-yellow-300 text-xs font-semibold uppercase tracking-widest">Social Media</span>
+            <h4 class="text-white font-bold text-lg mt-1">Kingdom Vibes Kit</h4>
+            <p class="text-gray-300 text-xs mt-1">50-piece social media template pack</p>
+          </div>
+        </div>
+
+        <div class="port-item rounded-3xl overflow-hidden relative group h-64 card-hover" data-cat="web" style="background:linear-gradient(135deg,#10b981,#0ea5e9)">
+          <div class="absolute inset-0 flex items-center justify-center"><i class="fas fa-globe text-white/20 text-7xl"></i></div>
+          <div class="overlay absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
+            <span class="text-green-300 text-xs font-semibold uppercase tracking-widest">Web Design</span>
+            <h4 class="text-white font-bold text-lg mt-1">Grace Ministry Site</h4>
+            <p class="text-gray-300 text-xs mt-1">Full church website redesign</p>
+          </div>
+        </div>
+
+        <div class="port-item rounded-3xl overflow-hidden relative group h-64 card-hover" data-cat="branding" style="background:linear-gradient(135deg,#8b5cf6,#ec4899)">
+          <div class="absolute inset-0 flex items-center justify-center"><i class="fas fa-star text-white/20 text-7xl"></i></div>
+          <div class="overlay absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
+            <span class="text-pink-300 text-xs font-semibold uppercase tracking-widest">Branding</span>
+            <h4 class="text-white font-bold text-lg mt-1">Conference Branding</h4>
+            <p class="text-gray-300 text-xs mt-1">Annual conference visual identity</p>
+          </div>
+        </div>
+
+        <div class="port-item rounded-3xl overflow-hidden relative group h-64 card-hover" data-cat="church" style="background:linear-gradient(135deg,#f97316,#eab308)">
+          <div class="absolute inset-0 flex items-center justify-center"><i class="fas fa-church text-white/20 text-7xl"></i></div>
+          <div class="overlay absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
+            <span class="text-orange-300 text-xs font-semibold uppercase tracking-widest">Church Media</span>
+            <h4 class="text-white font-bold text-lg mt-1">Worship Background Pack</h4>
+            <p class="text-gray-300 text-xs mt-1">30 premium worship backgrounds</p>
+          </div>
+        </div>
+
+        <div class="port-item rounded-3xl overflow-hidden relative group h-64 card-hover" data-cat="motion" style="background:linear-gradient(135deg,#ec4899,#8b5cf6)">
+          <div class="absolute inset-0 flex items-center justify-center"><i class="fas fa-play text-white/20 text-7xl"></i></div>
+          <div class="overlay absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
+            <span class="text-pink-300 text-xs font-semibold uppercase tracking-widest">Motion</span>
+            <h4 class="text-white font-bold text-lg mt-1">Lyric Video Series</h4>
+            <p class="text-gray-300 text-xs mt-1">Cinematic worship lyric videos</p>
+          </div>
+        </div>
+
+        <div class="port-item rounded-3xl overflow-hidden relative group h-64 card-hover" data-cat="social" style="background:linear-gradient(135deg,#14b8a6,#6366f1)">
+          <div class="absolute inset-0 flex items-center justify-center"><i class="fas fa-mobile-alt text-white/20 text-7xl"></i></div>
+          <div class="overlay absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
+            <span class="text-teal-300 text-xs font-semibold uppercase tracking-widest">Social Media</span>
+            <h4 class="text-white font-bold text-lg mt-1">Faith & Fire Campaign</h4>
+            <p class="text-gray-300 text-xs mt-1">Multi-platform social campaign</p>
+          </div>
+        </div>
+
+        <div class="port-item rounded-3xl overflow-hidden relative group h-64 card-hover" data-cat="branding" style="background:linear-gradient(135deg,#1e40af,#7c3aed)">
+          <div class="absolute inset-0 flex items-center justify-center"><i class="fas fa-building text-white/20 text-7xl"></i></div>
+          <div class="overlay absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
+            <span class="text-blue-300 text-xs font-semibold uppercase tracking-widest">Branding</span>
+            <h4 class="text-white font-bold text-lg mt-1">Nexus Business Brand</h4>
+            <p class="text-gray-300 text-xs mt-1">Corporate identity package</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section class="py-16 bg-gray-50 border-y border-gray-100">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div><h3 class="text-4xl font-black gradient-text">500+</h3><p class="text-gray-500 text-sm mt-1">Projects Completed</p></div>
+      <div><h3 class="text-4xl font-black gradient-text">50+</h3><p class="text-gray-500 text-sm mt-1">Industries Served</p></div>
+      <div><h3 class="text-4xl font-black gradient-text">200+</h3><p class="text-gray-500 text-sm mt-1">Happy Clients</p></div>
+      <div><h3 class="text-4xl font-black gradient-text">4.9★</h3><p class="text-gray-500 text-sm mt-1">Average Rating</p></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-gradient-to-br from-primary to-purple-600">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-black text-white mb-4">Love What You See?</h2>
+      <p class="text-purple-200 mb-8 text-lg">Let's create something just as amazing for your brand.</p>
+      <a href="contact.html" class="bg-white text-primary px-8 py-4 rounded-full font-bold text-sm hover:bg-purple-50 transition-all shadow-xl inline-block">Start Your Project →</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-white">
+    <div class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-4 gap-10">
+      <div class="md:col-span-2">
+        <a href="index.html" class="text-2xl font-black">PA<span class="gradient-text">Graphics</span></a>
+        <p class="text-gray-400 text-sm mt-3 mb-5 leading-relaxed max-w-xs">Crafting visual stories that inspire, transform, and leave a lasting impression.</p>
+        <div class="flex gap-3">
+          <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all text-sm"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all text-sm"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all text-sm"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all text-sm"><i class="fab fa-behance"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-bold text-sm mb-4">Services</h4>
+        <ul class="space-y-2 text-gray-400 text-sm">
+          <li><a href="services.html" class="hover:text-white transition-colors">Graphic Design</a></li>
+          <li><a href="services.html" class="hover:text-white transition-colors">Motion Graphics</a></li>
+          <li><a href="services.html" class="hover:text-white transition-colors">Church Media</a></li>
+          <li><a href="services.html" class="hover:text-white transition-colors">Web Design</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-sm mb-4">Company</h4>
+        <ul class="space-y-2 text-gray-400 text-sm">
+          <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="portfolio.html" class="hover:text-white transition-colors">Portfolio</a></li>
+          <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+          <li><a href="../index.php?page=login" class="hover:text-white transition-colors">Admin Login</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/10 py-5 text-center text-gray-500 text-xs">© 2025 PAGraphics. All rights reserved.</div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    });
+
+    // Portfolio filter
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const portItems = document.querySelectorAll('.port-item');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active', 'text-white'));
+        filterBtns.forEach(b => b.classList.add('text-gray-600'));
+        btn.classList.add('active');
+        btn.classList.remove('text-gray-600');
+
+        const filter = btn.dataset.filter;
+        portItems.forEach(item => {
+          if (filter === 'all' || item.dataset.cat === filter) {
+            item.classList.remove('hidden-item');
+          } else {
+            item.classList.add('hidden-item');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

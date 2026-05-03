@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact – PAGraphics</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: '#6d28d9', accent: '#7c3aed' },
+          fontFamily: { sans: ['Inter', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    html { scroll-behavior: smooth; }
+    .gradient-text { background: linear-gradient(135deg,#6d28d9,#a855f7); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .card-hover { transition: transform .25s, box-shadow .25s; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 16px 50px rgba(109,40,217,.1); }
+    .nav-link { position:relative; }
+    .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:#6d28d9; transition:width .3s; }
+    .nav-link:hover::after { width:100%; }
+    input:focus, select:focus, textarea:focus { outline:none; border-color:#6d28d9; box-shadow:0 0 0 3px rgba(109,40,217,.1); }
+    .faq-answer { max-height:0; overflow:hidden; transition:max-height .3s ease; }
+    .faq-item.open .faq-answer { max-height:200px; }
+    .faq-item.open .faq-icon { transform:rotate(45deg); }
+    .faq-icon { transition:transform .3s; }
+  </style>
+</head>
+<body class="font-sans bg-white text-gray-800 overflow-x-hidden">
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="text-2xl font-black text-gray-900">PA<span class="gradient-text">Graphics</span></a>
+      <ul class="hidden md:flex items-center gap-8">
+        <li><a href="index.html" class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm transition-colors">Home</a></li>
+        <li><a href="about.html" class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm transition-colors">About</a></li>
+        <li><a href="services.html" class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm transition-colors">Services</a></li>
+        <li><a href="portfolio.html" class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm transition-colors">Portfolio</a></li>
+        <li><a href="contact.html" class="nav-link text-primary font-semibold text-sm">Contact</a></li>
+        <li><a href="contact.html" class="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-accent transition-colors shadow-lg shadow-purple-200">Get Started</a></li>
+      </ul>
+      <button id="hamburger" class="md:hidden text-gray-700 text-xl"><i class="fas fa-bars"></i></button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-4">
+      <a href="index.html" class="text-gray-600 font-medium text-sm">Home</a>
+      <a href="about.html" class="text-gray-600 font-medium text-sm">About</a>
+      <a href="services.html" class="text-gray-600 font-medium text-sm">Services</a>
+      <a href="portfolio.html" class="text-gray-600 font-medium text-sm">Portfolio</a>
+      <a href="contact.html" class="text-primary font-semibold text-sm">Contact</a>
+      <a href="contact.html" class="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold text-center">Get Started</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="pt-32 pb-20 bg-gradient-to-br from-purple-50 to-white">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <span class="bg-purple-100 text-primary px-4 py-1.5 rounded-full text-xs font-semibold">Get In Touch</span>
+      <h1 class="text-5xl font-black text-gray-900 mt-5 mb-5">Let's <span class="gradient-text">Create Together</span></h1>
+      <p class="text-gray-500 text-lg max-w-2xl mx-auto leading-relaxed">Have a project in mind? We'd love to hear about it. Fill out the form below and we'll get back to you within 24 hours.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT INFO CARDS -->
+  <section class="py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-6">
+      <div class="bg-gray-50 rounded-2xl p-7 text-center card-hover border border-gray-100">
+        <div class="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4"><i class="fas fa-envelope text-primary text-xl"></i></div>
+        <h3 class="font-bold text-gray-900 mb-1">Email Us</h3>
+        <p class="text-gray-500 text-sm mb-2">We reply within 24 hours</p>
+        <a href="mailto:hello@pagraphics.com" class="text-primary font-semibold text-sm hover:underline">hello@pagraphics.com</a>
+      </div>
+      <div class="bg-gradient-to-br from-primary to-purple-500 rounded-2xl p-7 text-center card-hover text-white">
+        <div class="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4"><i class="fas fa-phone text-white text-xl"></i></div>
+        <h3 class="font-bold mb-1">Call Us</h3>
+        <p class="text-purple-200 text-sm mb-2">Mon–Fri, 9am–6pm</p>
+        <a href="tel:+1234567890" class="text-white font-semibold text-sm hover:underline">+1 (234) 567-890</a>
+      </div>
+      <div class="bg-gray-50 rounded-2xl p-7 text-center card-hover border border-gray-100">
+        <div class="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4"><i class="fab fa-whatsapp text-primary text-xl"></i></div>
+        <h3 class="font-bold text-gray-900 mb-1">WhatsApp</h3>
+        <p class="text-gray-500 text-sm mb-2">Quick responses guaranteed</p>
+        <a href="https://wa.me/1234567890" class="text-primary font-semibold text-sm hover:underline">Chat on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT FORM + SIDEBAR -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-5 gap-12">
+
+      <!-- Form -->
+      <div class="md:col-span-3">
+        <h2 class="text-3xl font-black text-gray-900 mb-2">Send Us a <span class="gradient-text">Message</span></h2>
+        <p class="text-gray-500 text-sm mb-8">Tell us about your project and we'll craft the perfect solution.</p>
+
+        <form id="contactForm" class="space-y-5">
+          <div class="grid md:grid-cols-2 gap-5">
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-1.5">First Name *</label>
+              <input type="text" placeholder="John" required class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm transition-all"/>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-1.5">Last Name *</label>
+              <input type="text" placeholder="Doe" required class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm transition-all"/>
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1.5">Email Address *</label>
+            <input type="email" placeholder="john@example.com" required class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm transition-all"/>
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1.5">Phone Number</label>
+            <input type="tel" placeholder="+1 (234) 567-890" class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm transition-all"/>
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1.5">Service Needed *</label>
+            <select required class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm transition-all bg-white text-gray-700">
+              <option value="">Select a service...</option>
+              <option>Graphic Design</option>
+              <option>Motion Graphics</option>
+              <option>Church Media</option>
+              <option>Web Design</option>
+              <option>Social Media Design</option>
+              <option>Print Design</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1.5">Budget Range</label>
+            <select class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm transition-all bg-white text-gray-700">
+              <option value="">Select budget range...</option>
+              <option>Under $300</option>
+              <option>$300 – $700</option>
+              <option>$700 – $1,500</option>
+              <option>$1,500 – $5,000</option>
+              <option>$5,000+</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1.5">Project Details *</label>
+            <textarea rows="5" placeholder="Tell us about your project, goals, timeline, and any specific requirements..." required class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm transition-all resize-none"></textarea>
+          </div>
+          <button type="submit" id="submitBtn" class="w-full bg-primary text-white py-4 rounded-xl font-bold text-sm hover:bg-accent transition-all shadow-lg shadow-purple-200 flex items-center justify-center gap-2">
+            Send Message <i class="fas fa-arrow-right"></i>
+          </button>
+        </form>
+
+        <!-- Success Message -->
+        <div id="successMsg" class="hidden mt-6 bg-green-50 border border-green-200 rounded-2xl p-6 text-center">
+          <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3"><i class="fas fa-check text-green-600 text-xl"></i></div>
+          <h3 class="font-bold text-gray-900 mb-1">Message Sent!</h3>
+          <p class="text-gray-500 text-sm">We'll get back to you within 24 hours.</p>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="md:col-span-2 space-y-6">
+        <div class="bg-gray-50 rounded-2xl p-7 border border-gray-100">
+          <h3 class="font-bold text-gray-900 mb-4">Why Work With Us?</h3>
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"><i class="fas fa-bolt text-primary text-xs"></i></div>
+              <div><p class="font-semibold text-gray-800 text-sm">Fast Turnaround</p><p class="text-gray-500 text-xs mt-0.5">Most projects in 3–5 business days</p></div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"><i class="fas fa-redo text-primary text-xs"></i></div>
+              <div><p class="font-semibold text-gray-800 text-sm">Unlimited Revisions</p><p class="text-gray-500 text-xs mt-0.5">We work until you're 100% happy</p></div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"><i class="fas fa-shield-alt text-primary text-xs"></i></div>
+              <div><p class="font-semibold text-gray-800 text-sm">Satisfaction Guarantee</p><p class="text-gray-500 text-xs mt-0.5">Full refund if not satisfied</p></div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"><i class="fas fa-headset text-primary text-xs"></i></div>
+              <div><p class="font-semibold text-gray-800 text-sm">Dedicated Support</p><p class="text-gray-500 text-xs mt-0.5">Your own project manager</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-primary to-purple-500 rounded-2xl p-7 text-white">
+          <h3 class="font-bold mb-3">Follow Our Work</h3>
+          <p class="text-purple-200 text-sm mb-5">Stay inspired with our latest designs and behind-the-scenes content.</p>
+          <div class="flex gap-3">
+            <a href="#" class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-white/30 transition-all"><i class="fab fa-instagram text-sm"></i></a>
+            <a href="#" class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-white/30 transition-all"><i class="fab fa-facebook text-sm"></i></a>
+            <a href="#" class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-white/30 transition-all"><i class="fab fa-youtube text-sm"></i></a>
+            <a href="#" class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-white/30 transition-all"><i class="fab fa-behance text-sm"></i></a>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-7 border border-gray-100">
+          <h3 class="font-bold text-gray-900 mb-2">Business Hours</h3>
+          <div class="space-y-2 text-sm">
+            <div class="flex justify-between"><span class="text-gray-500">Monday – Friday</span><span class="font-semibold text-gray-800">9:00 AM – 6:00 PM</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">Saturday</span><span class="font-semibold text-gray-800">10:00 AM – 3:00 PM</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">Sunday</span><span class="font-semibold text-gray-800">Closed</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-24 bg-gray-50">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <span class="bg-purple-100 text-primary px-4 py-1.5 rounded-full text-xs font-semibold">FAQ</span>
+        <h2 class="text-4xl font-black text-gray-900 mt-4 mb-3">Frequently Asked <span class="gradient-text">Questions</span></h2>
+      </div>
+      <div class="space-y-3" id="faqContainer">
+
+        <div class="faq-item bg-white rounded-2xl border border-gray-100 overflow-hidden">
+          <button class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left">
+            <span class="font-semibold text-gray-900 text-sm">How long does a typical project take?</span>
+            <i class="fas fa-plus faq-icon text-primary text-sm flex-shrink-0 ml-4"></i>
+          </button>
+          <div class="faq-answer px-6 pb-5">
+            <p class="text-gray-500 text-sm leading-relaxed">Most graphic design projects are completed within 3–5 business days. Motion graphics and web design projects typically take 1–2 weeks depending on complexity. Rush delivery is available for an additional fee.</p>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-2xl border border-gray-100 overflow-hidden">
+          <button class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left">
+            <span class="font-semibold text-gray-900 text-sm">What file formats will I receive?</span>
+            <i class="fas fa-plus faq-icon text-primary text-sm flex-shrink-0 ml-4"></i>
+          </button>
+          <div class="faq-answer px-6 pb-5">
+            <p class="text-gray-500 text-sm leading-relaxed">You'll receive all final files in the formats you need — typically PNG, JPG, PDF, and SVG for print and digital use. Source files (AI, PSD, etc.) are included in Professional and Enterprise packages.</p>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-2xl border border-gray-100 overflow-hidden">
+          <button class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left">
+            <span class="font-semibold text-gray-900 text-sm">Do you work with churches and ministries?</span>
+            <i class="fas fa-plus faq-icon text-primary text-sm flex-shrink-0 ml-4"></i>
+          </button>
+          <div class="faq-answer px-6 pb-5">
+            <p class="text-gray-500 text-sm leading-relaxed">Absolutely! Church and ministry work is one of our specialties. We understand the unique visual needs of faith communities and have worked with hundreds of churches across different denominations.</p>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-2xl border border-gray-100 overflow-hidden">
+          <button class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left">
+            <span class="font-semibold text-gray-900 text-sm">How does the revision process work?</span>
+            <i class="fas fa-plus faq-icon text-primary text-sm flex-shrink-0 ml-4"></i>
+          </button>
+          <div class="faq-answer px-6 pb-5">
+            <p class="text-gray-500 text-sm leading-relaxed">After delivering the initial concept, you can request changes and we'll revise until you're completely satisfied. Professional and Enterprise plans include unlimited revisions. Starter plans include 3 rounds of revisions.</p>
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-2xl border border-gray-100 overflow-hidden">
+          <button class="faq-trigger w-full flex items-center justify-between px-6 py-5 text-left">
+            <span class="font-semibold text-gray-900 text-sm">What payment methods do you accept?</span>
+            <i class="fas fa-plus faq-icon text-primary text-sm flex-shrink-0 ml-4"></i>
+          </button>
+          <div class="faq-answer px-6 pb-5">
+            <p class="text-gray-500 text-sm leading-relaxed">We accept all major credit cards, PayPal, bank transfers, and Zelle. A 50% deposit is required to begin work, with the remaining balance due upon project completion.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-white">
+    <div class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-4 gap-10">
+      <div class="md:col-span-2">
+        <a href="index.html" class="text-2xl font-black">PA<span class="gradient-text">Graphics</span></a>
+        <p class="text-gray-400 text-sm mt-3 mb-5 leading-relaxed max-w-xs">Crafting visual stories that inspire, transform, and leave a lasting impression.</p>
+        <div class="flex gap-3">
+          <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all text-sm"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all text-sm"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all text-sm"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all text-sm"><i class="fab fa-behance"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-bold text-sm mb-4">Services</h4>
+        <ul class="space-y-2 text-gray-400 text-sm">
+          <li><a href="services.html" class="hover:text-white transition-colors">Graphic Design</a></li>
+          <li><a href="services.html" class="hover:text-white transition-colors">Motion Graphics</a></li>
+          <li><a href="services.html" class="hover:text-white transition-colors">Church Media</a></li>
+          <li><a href="services.html" class="hover:text-white transition-colors">Web Design</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-sm mb-4">Company</h4>
+        <ul class="space-y-2 text-gray-400 text-sm">
+          <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="portfolio.html" class="hover:text-white transition-colors">Portfolio</a></li>
+          <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+          <li><a href="../index.php?page=login" class="hover:text-white transition-colors">Admin Login</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/10 py-5 text-center text-gray-500 text-xs">© 2025 PAGraphics. All rights reserved.</div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-trigger').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+
+    // Form submit
+    document.getElementById('contactForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const btn = document.getElementById('submitBtn');
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+      btn.disabled = true;
+      setTimeout(() => {
+        document.getElementById('contactForm').classList.add('hidden');
+        document.getElementById('successMsg').classList.remove('hidden');
+      }, 1500);
+    });
+  </script>
+</body>
+</html>
