@@ -29,7 +29,7 @@
         scroll-behavior: smooth;
       }
       .gradient-text {
-        color: #F0C03A;
+        color: #f0c03a;
       }
       .card-hover {
         transition:
@@ -50,7 +50,7 @@
         left: 0;
         width: 0;
         height: 2px;
-        background: #F0C03A;
+        background: #f0c03a;
         transition: width 0.3s ease;
       }
       .nav-link:hover::after {
@@ -105,9 +105,18 @@
       <div
         class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"
       >
-        <a href="index.html" class="text-2xl font-black text-gray-900"
-          >PA<span class="gradient-text">Graphics</span></a
-        >
+        <a href="index.html" class="inline-block leading-tight">
+          <h1 class="text-2xl font-black text-gray-900 tracking-wide">
+            PA<span class="gradient-text">Graphics</span>
+          </h1>
+
+          <p
+            class="text-[10px] font-semibold uppercase tracking-[3px] text-gray-500 ml-1"
+            style="font-family: &quot;Poppins&quot;, sans-serif"
+          >
+            Creative Design Studio
+          </p>
+        </a>
         <ul class="hidden md:flex items-center gap-8">
           <li>
             <a
@@ -439,8 +448,7 @@
                 :class="activeCategory === category.id ? 'bg-primary text-white' : 'text-gray-600 hover:border-primary'"
                 class="px-5 py-2 rounded-full text-sm font-semibold border border-gray-200 transition-all"
                 x-text="category.name"
-              >
-              </button>
+              ></button>
             </template>
           </div>
 
@@ -449,7 +457,10 @@
               x-ref="gallery"
               class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px]"
             >
-              <template x-for="(image, index) in filteredImages" :key="image.id">
+              <template
+                x-for="(image, index) in filteredImages"
+                :key="image.id"
+              >
                 <li
                   x-transition:enter="transition ease-out duration-300"
                   x-transition:enter-start="opacity-0 scale-90"
@@ -466,7 +477,9 @@
               </template>
             </ul>
             <div x-show="filteredImages.length === 0" class="text-center py-20">
-              <p class="text-gray-500 text-lg">No images found in this category.</p>
+              <p class="text-gray-500 text-lg">
+                No images found in this category.
+              </p>
             </div>
           </div>
 

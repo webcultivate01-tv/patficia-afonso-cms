@@ -28,7 +28,7 @@
         scroll-behavior: smooth;
       }
       .gradient-text {
-        color: #F0C03A;
+        color: #f0c03a;
       }
       .card-hover {
         transition:
@@ -46,7 +46,7 @@
         left: 0;
         width: 0;
         height: 2px;
-        background: #F0C03A;
+        background: #f0c03a;
         transition: width 0.3s;
       }
       .nav-link:hover::after {
@@ -55,7 +55,7 @@
       .nav-link {
         position: relative;
       }
-      
+
       @keyframes fadeInUp {
         from {
           opacity: 0;
@@ -66,7 +66,7 @@
           transform: translateY(0);
         }
       }
-      
+
       @keyframes fadeIn {
         from {
           opacity: 0;
@@ -75,25 +75,27 @@
           opacity: 1;
         }
       }
-      
+
       @keyframes float {
-        0%, 100% {
+        0%,
+        100% {
           transform: translateY(0px) rotate(0deg);
         }
         50% {
           transform: translateY(-20px) rotate(5deg);
         }
       }
-      
+
       @keyframes floatReverse {
-        0%, 100% {
+        0%,
+        100% {
           transform: translateY(0px) rotate(0deg);
         }
         50% {
           transform: translateY(20px) rotate(-5deg);
         }
       }
-      
+
       @keyframes scaleIn {
         from {
           opacity: 0;
@@ -104,7 +106,7 @@
           transform: scale(1);
         }
       }
-      
+
       @keyframes slideInLeft {
         from {
           opacity: 0;
@@ -115,7 +117,7 @@
           transform: translateX(0);
         }
       }
-      
+
       @keyframes slideInRight {
         from {
           opacity: 0;
@@ -126,48 +128,62 @@
           transform: translateX(0);
         }
       }
-      
+
       .animate-fadeInUp {
         animation: fadeInUp 0.8s ease-out forwards;
       }
-      
+
       .animate-fadeIn {
         animation: fadeIn 0.8s ease-out forwards;
       }
-      
+
       .animate-float {
         animation: float 6s ease-in-out infinite;
       }
-      
+
       .animate-floatReverse {
         animation: floatReverse 8s ease-in-out infinite;
       }
-      
+
       .animate-scaleIn {
         animation: scaleIn 0.8s ease-out forwards;
       }
-      
+
       .animate-slideInLeft {
         animation: slideInLeft 0.8s ease-out forwards;
       }
-      
+
       .animate-slideInRight {
         animation: slideInRight 0.8s ease-out forwards;
       }
-      
-      .delay-100 { animation-delay: 0.1s; }
-      .delay-200 { animation-delay: 0.2s; }
-      .delay-300 { animation-delay: 0.3s; }
-      .delay-400 { animation-delay: 0.4s; }
-      .delay-500 { animation-delay: 0.5s; }
-      .delay-600 { animation-delay: 0.6s; }
-      .delay-700 { animation-delay: 0.7s; }
-      
+
+      .delay-100 {
+        animation-delay: 0.1s;
+      }
+      .delay-200 {
+        animation-delay: 0.2s;
+      }
+      .delay-300 {
+        animation-delay: 0.3s;
+      }
+      .delay-400 {
+        animation-delay: 0.4s;
+      }
+      .delay-500 {
+        animation-delay: 0.5s;
+      }
+      .delay-600 {
+        animation-delay: 0.6s;
+      }
+      .delay-700 {
+        animation-delay: 0.7s;
+      }
+
       .hero-section {
         height: 100vh;
         min-height: 600px;
       }
-      
+
       @media (max-width: 768px) {
         .hero-section {
           min-height: 100vh;
@@ -187,9 +203,18 @@
       <div
         class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"
       >
-        <a href="index.html" class="text-2xl font-black text-gray-900"
-          >PA<span class="gradient-text">Graphics</span></a
-        >
+        <a href="index.html" class="inline-block leading-tight">
+          <h1 class="text-2xl font-black text-gray-900 tracking-wide">
+            PA<span class="gradient-text">Graphics</span>
+          </h1>
+
+          <p
+            class="text-[10px] font-semibold uppercase tracking-[3px] text-gray-500 ml-1"
+            style="font-family: &quot;Poppins&quot;, sans-serif"
+          >
+            Creative Design Studio
+          </p>
+        </a>
         <ul class="hidden md:flex items-center gap-8">
           <li>
             <a
@@ -264,67 +289,137 @@
     </nav>
 
     <!-- PAGE HERO -->
-    <section class="hero-section relative bg-gradient-to-br from-gray-900 via-black to-gray-900 overflow-hidden flex items-center">
+    <section
+      class="hero-section relative bg-gradient-to-br from-gray-900 via-black to-gray-900 overflow-hidden flex items-center"
+    >
       <!-- Animated Background Elements -->
       <div class="absolute inset-0">
-        <div class="absolute top-20 left-10 w-64 h-64 md:w-96 md:h-96 bg-[#F0C03A]/10 rounded-full blur-3xl animate-pulse"></div>
-        <div class="absolute bottom-20 right-10 w-48 h-48 md:w-80 md:h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 1.5s"></div>
-        <div class="absolute top-1/2 left-1/3 w-40 h-40 md:w-72 md:h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 3s"></div>
+        <div
+          class="absolute top-20 left-10 w-64 h-64 md:w-96 md:h-96 bg-[#F0C03A]/10 rounded-full blur-3xl animate-pulse"
+        ></div>
+        <div
+          class="absolute bottom-20 right-10 w-48 h-48 md:w-80 md:h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse"
+          style="animation-delay: 1.5s"
+        ></div>
+        <div
+          class="absolute top-1/2 left-1/3 w-40 h-40 md:w-72 md:h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse"
+          style="animation-delay: 3s"
+        ></div>
       </div>
 
       <!-- Grid Pattern Overlay -->
-      <div class="absolute inset-0 opacity-[0.02]" style="background-image: linear-gradient(#F0C03A 1px, transparent 1px), linear-gradient(90deg, #F0C03A 1px, transparent 1px); background-size: 50px 50px;"></div>
+      <div
+        class="absolute inset-0 opacity-[0.02]"
+        style="
+          background-image:
+            linear-gradient(#f0c03a 1px, transparent 1px),
+            linear-gradient(90deg, #f0c03a 1px, transparent 1px);
+          background-size: 50px 50px;
+        "
+      ></div>
 
-      <div class="max-w-7xl mx-auto px-4 md:px-6 relative z-10 w-full py-8 md:py-0">
+      <div
+        class="max-w-7xl mx-auto px-4 md:px-6 relative z-10 w-full py-8 md:py-0"
+      >
         <div class="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <!-- Left Content -->
-          <div class="text-left opacity-0 animate-slideInLeft order-2 lg:order-1">
+          <div
+            class="text-left opacity-0 animate-slideInLeft order-2 lg:order-1"
+          >
             <!-- Badge -->
-            <div class="inline-flex items-center gap-2 bg-[#F0C03A]/10 backdrop-blur-sm border border-[#F0C03A]/30 text-[#F0C03A] px-3 py-1.5 md:px-4 md:py-2 rounded-full text-[10px] md:text-xs font-bold tracking-wider uppercase mb-3 md:mb-4">
+            <div
+              class="inline-flex items-center gap-2 bg-[#F0C03A]/10 backdrop-blur-sm border border-[#F0C03A]/30 text-[#F0C03A] px-3 py-1.5 md:px-4 md:py-2 rounded-full text-[10px] md:text-xs font-bold tracking-wider uppercase mb-3 md:mb-4"
+            >
               <span class="relative flex h-2 w-2">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#F0C03A] opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-2 w-2 bg-[#F0C03A]"></span>
+                <span
+                  class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#F0C03A] opacity-75"
+                ></span>
+                <span
+                  class="relative inline-flex rounded-full h-2 w-2 bg-[#F0C03A]"
+                ></span>
               </span>
               About PAGraphics
             </div>
 
             <!-- Main Heading -->
-            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-3 md:mb-4 leading-[1.1]">
+            <h1
+              class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-3 md:mb-4 leading-[1.1]"
+            >
               Where
-              <span class="block mt-1 text-transparent bg-clip-text bg-gradient-to-r from-[#F0C03A] via-yellow-300 to-[#F0C03A] animate-pulse">
+              <span
+                class="block mt-1 text-transparent bg-clip-text bg-gradient-to-r from-[#F0C03A] via-yellow-300 to-[#F0C03A] animate-pulse"
+              >
                 Creativity
               </span>
               <span class="block mt-1">Meets Innovation</span>
             </h1>
 
             <!-- Description -->
-            <p class="text-sm md:text-base lg:text-lg text-gray-400 mb-4 md:mb-6 leading-relaxed">
-              We transform ideas into stunning visual experiences. From bold branding to captivating motion graphics, we craft designs that inspire.
+            <p
+              class="text-sm md:text-base lg:text-lg text-gray-400 mb-4 md:mb-6 leading-relaxed"
+            >
+              We transform ideas into stunning visual experiences. From bold
+              branding to captivating motion graphics, we craft designs that
+              inspire.
             </p>
 
             <!-- Stats Row -->
             <div class="grid grid-cols-3 gap-3 md:gap-4 mb-4 md:mb-6">
-              <div class="text-center lg:text-left opacity-0 animate-fadeInUp delay-200">
-                <div class="text-2xl sm:text-3xl md:text-4xl font-black text-[#F0C03A] mb-1">500+</div>
-                <div class="text-[10px] md:text-xs text-gray-500 font-medium">Projects</div>
+              <div
+                class="text-center lg:text-left opacity-0 animate-fadeInUp delay-200"
+              >
+                <div
+                  class="text-2xl sm:text-3xl md:text-4xl font-black text-[#F0C03A] mb-1"
+                >
+                  500+
+                </div>
+                <div class="text-[10px] md:text-xs text-gray-500 font-medium">
+                  Projects
+                </div>
               </div>
-              <div class="text-center lg:text-left opacity-0 animate-fadeInUp delay-300">
-                <div class="text-2xl sm:text-3xl md:text-4xl font-black text-[#F0C03A] mb-1">200+</div>
-                <div class="text-[10px] md:text-xs text-gray-500 font-medium">Clients</div>
+              <div
+                class="text-center lg:text-left opacity-0 animate-fadeInUp delay-300"
+              >
+                <div
+                  class="text-2xl sm:text-3xl md:text-4xl font-black text-[#F0C03A] mb-1"
+                >
+                  200+
+                </div>
+                <div class="text-[10px] md:text-xs text-gray-500 font-medium">
+                  Clients
+                </div>
               </div>
-              <div class="text-center lg:text-left opacity-0 animate-fadeInUp delay-400">
-                <div class="text-2xl sm:text-3xl md:text-4xl font-black text-[#F0C03A] mb-1">8+</div>
-                <div class="text-[10px] md:text-xs text-gray-500 font-medium">Years</div>
+              <div
+                class="text-center lg:text-left opacity-0 animate-fadeInUp delay-400"
+              >
+                <div
+                  class="text-2xl sm:text-3xl md:text-4xl font-black text-[#F0C03A] mb-1"
+                >
+                  8+
+                </div>
+                <div class="text-[10px] md:text-xs text-gray-500 font-medium">
+                  Years
+                </div>
               </div>
             </div>
 
             <!-- CTA Buttons -->
-            <div class="flex flex-row gap-2 md:gap-3 opacity-0 animate-fadeInUp delay-500">
-              <a href="contact.html" class="group relative px-4 py-2.5 md:px-6 md:py-3 bg-[#F0C03A] text-black font-bold rounded-xl overflow-hidden transition-all hover:scale-105 hover:shadow-2xl hover:shadow-[#F0C03A]/50 flex items-center justify-center gap-2 text-xs md:text-sm flex-1 sm:flex-initial">
+            <div
+              class="flex flex-row gap-2 md:gap-3 opacity-0 animate-fadeInUp delay-500"
+            >
+              <a
+                href="contact.html"
+                class="group relative px-4 py-2.5 md:px-6 md:py-3 bg-[#F0C03A] text-black font-bold rounded-xl overflow-hidden transition-all hover:scale-105 hover:shadow-2xl hover:shadow-[#F0C03A]/50 flex items-center justify-center gap-2 text-xs md:text-sm flex-1 sm:flex-initial"
+              >
                 <span class="relative z-10">Start Project</span>
-                <i class="fas fa-arrow-right relative z-10 group-hover:translate-x-1 transition-transform text-xs"></i>
+                <i
+                  class="fas fa-arrow-right relative z-10 group-hover:translate-x-1 transition-transform text-xs"
+                ></i>
               </a>
-              <a href="portfolio.html" class="px-4 py-2.5 md:px-6 md:py-3 border-2 border-[#F0C03A] text-[#F0C03A] font-bold rounded-xl hover:bg-[#F0C03A]/10 transition-all flex items-center justify-center gap-2 text-xs md:text-sm flex-1 sm:flex-initial">
+              <a
+                href="portfolio.html"
+                class="px-4 py-2.5 md:px-6 md:py-3 border-2 border-[#F0C03A] text-[#F0C03A] font-bold rounded-xl hover:bg-[#F0C03A]/10 transition-all flex items-center justify-center gap-2 text-xs md:text-sm flex-1 sm:flex-initial"
+              >
                 <i class="fas fa-images text-xs"></i>
                 <span>Portfolio</span>
               </a>
@@ -332,75 +427,146 @@
           </div>
 
           <!-- Right Visual Content -->
-          <div class="relative opacity-0 animate-slideInRight delay-200 order-1 lg:order-2">
+          <div
+            class="relative opacity-0 animate-slideInRight delay-200 order-1 lg:order-2"
+          >
             <!-- Main Image Container -->
             <div class="relative">
               <!-- Floating Design Elements -->
-              <div class="absolute -top-4 -left-4 md:-top-6 md:-left-6 w-16 h-16 md:w-24 md:h-24 bg-gradient-to-br from-[#F0C03A] to-yellow-600 rounded-2xl md:rounded-3xl rotate-12 opacity-80 shadow-2xl shadow-[#F0C03A]/50 animate-float"></div>
-              <div class="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 w-20 h-20 md:w-32 md:h-32 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full opacity-70 shadow-2xl shadow-purple-500/50 animate-floatReverse"></div>
-              
+              <div
+                class="absolute -top-4 -left-4 md:-top-6 md:-left-6 w-16 h-16 md:w-24 md:h-24 bg-gradient-to-br from-[#F0C03A] to-yellow-600 rounded-2xl md:rounded-3xl rotate-12 opacity-80 shadow-2xl shadow-[#F0C03A]/50 animate-float"
+              ></div>
+              <div
+                class="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 w-20 h-20 md:w-32 md:h-32 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full opacity-70 shadow-2xl shadow-purple-500/50 animate-floatReverse"
+              ></div>
+
               <!-- Central Image/Graphic -->
-              <div class="relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl md:rounded-3xl p-4 md:p-6 border border-gray-700 shadow-2xl overflow-hidden">
+              <div
+                class="relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl md:rounded-3xl p-4 md:p-6 border border-gray-700 shadow-2xl overflow-hidden"
+              >
                 <!-- Background Pattern -->
                 <div class="absolute inset-0 opacity-5">
                   <svg width="100%" height="100%">
-                    <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-                      <circle cx="2" cy="2" r="1" fill="#F0C03A"/>
+                    <pattern
+                      id="dots"
+                      x="0"
+                      y="0"
+                      width="20"
+                      height="20"
+                      patternUnits="userSpaceOnUse"
+                    >
+                      <circle cx="2" cy="2" r="1" fill="#F0C03A" />
                     </pattern>
-                    <rect width="100%" height="100%" fill="url(#dots)"/>
+                    <rect width="100%" height="100%" fill="url(#dots)" />
                   </svg>
                 </div>
 
                 <!-- Design Tools Illustration -->
                 <div class="relative z-10 space-y-3 md:space-y-4">
                   <!-- Color Palette -->
-                  <div class="flex gap-1.5 md:gap-2 justify-center opacity-0 animate-scaleIn delay-400">
-                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-gradient-to-br from-[#F0C03A] to-yellow-600 shadow-lg transform hover:scale-110 transition-transform"></div>
-                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 shadow-lg transform hover:scale-110 transition-transform"></div>
-                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-gradient-to-br from-blue-500 to-cyan-400 shadow-lg transform hover:scale-110 transition-transform"></div>
-                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-gradient-to-br from-green-500 to-teal-400 shadow-lg transform hover:scale-110 transition-transform"></div>
+                  <div
+                    class="flex gap-1.5 md:gap-2 justify-center opacity-0 animate-scaleIn delay-400"
+                  >
+                    <div
+                      class="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-gradient-to-br from-[#F0C03A] to-yellow-600 shadow-lg transform hover:scale-110 transition-transform"
+                    ></div>
+                    <div
+                      class="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 shadow-lg transform hover:scale-110 transition-transform"
+                    ></div>
+                    <div
+                      class="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-gradient-to-br from-blue-500 to-cyan-400 shadow-lg transform hover:scale-110 transition-transform"
+                    ></div>
+                    <div
+                      class="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-gradient-to-br from-green-500 to-teal-400 shadow-lg transform hover:scale-110 transition-transform"
+                    ></div>
                   </div>
 
                   <!-- Design Icons Grid -->
-                  <div class="grid grid-cols-3 gap-2 md:gap-3 py-3 md:py-4 opacity-0 animate-fadeIn delay-500">
-                    <div class="bg-gray-800/50 backdrop-blur-sm rounded-lg md:rounded-xl p-3 md:p-4 flex items-center justify-center border border-gray-700 hover:border-[#F0C03A] transition-all group">
-                      <i class="fas fa-pen-nib text-xl md:text-2xl text-[#F0C03A] group-hover:scale-110 transition-transform"></i>
+                  <div
+                    class="grid grid-cols-3 gap-2 md:gap-3 py-3 md:py-4 opacity-0 animate-fadeIn delay-500"
+                  >
+                    <div
+                      class="bg-gray-800/50 backdrop-blur-sm rounded-lg md:rounded-xl p-3 md:p-4 flex items-center justify-center border border-gray-700 hover:border-[#F0C03A] transition-all group"
+                    >
+                      <i
+                        class="fas fa-pen-nib text-xl md:text-2xl text-[#F0C03A] group-hover:scale-110 transition-transform"
+                      ></i>
                     </div>
-                    <div class="bg-gray-800/50 backdrop-blur-sm rounded-lg md:rounded-xl p-3 md:p-4 flex items-center justify-center border border-gray-700 hover:border-purple-500 transition-all group">
-                      <i class="fas fa-palette text-xl md:text-2xl text-purple-500 group-hover:scale-110 transition-transform"></i>
+                    <div
+                      class="bg-gray-800/50 backdrop-blur-sm rounded-lg md:rounded-xl p-3 md:p-4 flex items-center justify-center border border-gray-700 hover:border-purple-500 transition-all group"
+                    >
+                      <i
+                        class="fas fa-palette text-xl md:text-2xl text-purple-500 group-hover:scale-110 transition-transform"
+                      ></i>
                     </div>
-                    <div class="bg-gray-800/50 backdrop-blur-sm rounded-lg md:rounded-xl p-3 md:p-4 flex items-center justify-center border border-gray-700 hover:border-blue-500 transition-all group">
-                      <i class="fas fa-layer-group text-xl md:text-2xl text-blue-500 group-hover:scale-110 transition-transform"></i>
+                    <div
+                      class="bg-gray-800/50 backdrop-blur-sm rounded-lg md:rounded-xl p-3 md:p-4 flex items-center justify-center border border-gray-700 hover:border-blue-500 transition-all group"
+                    >
+                      <i
+                        class="fas fa-layer-group text-xl md:text-2xl text-blue-500 group-hover:scale-110 transition-transform"
+                      ></i>
                     </div>
-                    <div class="bg-gray-800/50 backdrop-blur-sm rounded-lg md:rounded-xl p-3 md:p-4 flex items-center justify-center border border-gray-700 hover:border-green-500 transition-all group">
-                      <i class="fas fa-vector-square text-xl md:text-2xl text-green-500 group-hover:scale-110 transition-transform"></i>
+                    <div
+                      class="bg-gray-800/50 backdrop-blur-sm rounded-lg md:rounded-xl p-3 md:p-4 flex items-center justify-center border border-gray-700 hover:border-green-500 transition-all group"
+                    >
+                      <i
+                        class="fas fa-vector-square text-xl md:text-2xl text-green-500 group-hover:scale-110 transition-transform"
+                      ></i>
                     </div>
-                    <div class="bg-gray-800/50 backdrop-blur-sm rounded-lg md:rounded-xl p-3 md:p-4 flex items-center justify-center border border-gray-700 hover:border-pink-500 transition-all group">
-                      <i class="fas fa-bezier-curve text-xl md:text-2xl text-pink-500 group-hover:scale-110 transition-transform"></i>
+                    <div
+                      class="bg-gray-800/50 backdrop-blur-sm rounded-lg md:rounded-xl p-3 md:p-4 flex items-center justify-center border border-gray-700 hover:border-pink-500 transition-all group"
+                    >
+                      <i
+                        class="fas fa-bezier-curve text-xl md:text-2xl text-pink-500 group-hover:scale-110 transition-transform"
+                      ></i>
                     </div>
-                    <div class="bg-gray-800/50 backdrop-blur-sm rounded-lg md:rounded-xl p-3 md:p-4 flex items-center justify-center border border-gray-700 hover:border-cyan-500 transition-all group">
-                      <i class="fas fa-magic text-xl md:text-2xl text-cyan-500 group-hover:scale-110 transition-transform"></i>
+                    <div
+                      class="bg-gray-800/50 backdrop-blur-sm rounded-lg md:rounded-xl p-3 md:p-4 flex items-center justify-center border border-gray-700 hover:border-cyan-500 transition-all group"
+                    >
+                      <i
+                        class="fas fa-magic text-xl md:text-2xl text-cyan-500 group-hover:scale-110 transition-transform"
+                      ></i>
                     </div>
                   </div>
 
                   <!-- Typography Sample -->
-                  <div class="text-center space-y-1.5 md:space-y-2 opacity-0 animate-scaleIn delay-600">
-                    <div class="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#F0C03A] via-purple-500 to-blue-500">Aa</div>
+                  <div
+                    class="text-center space-y-1.5 md:space-y-2 opacity-0 animate-scaleIn delay-600"
+                  >
+                    <div
+                      class="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#F0C03A] via-purple-500 to-blue-500"
+                    >
+                      Aa
+                    </div>
                     <div class="flex gap-1.5 md:gap-2 justify-center">
-                      <div class="h-0.5 md:h-1 w-8 md:w-10 bg-[#F0C03A] rounded-full"></div>
-                      <div class="h-0.5 md:h-1 w-5 md:w-6 bg-purple-500 rounded-full"></div>
-                      <div class="h-0.5 md:h-1 w-10 md:w-12 bg-blue-500 rounded-full"></div>
+                      <div
+                        class="h-0.5 md:h-1 w-8 md:w-10 bg-[#F0C03A] rounded-full"
+                      ></div>
+                      <div
+                        class="h-0.5 md:h-1 w-5 md:w-6 bg-purple-500 rounded-full"
+                      ></div>
+                      <div
+                        class="h-0.5 md:h-1 w-10 md:w-12 bg-blue-500 rounded-full"
+                      ></div>
                     </div>
                   </div>
                 </div>
               </div>
 
               <!-- Floating Badge - Hidden on small mobile -->
-              <div class="hidden sm:flex absolute -bottom-6 md:-bottom-8 left-1/2 transform -translate-x-1/2 bg-white rounded-lg md:rounded-xl shadow-2xl p-2 md:p-3 border border-gray-100 items-center gap-2 opacity-0 animate-fadeInUp delay-700">
-                <div class="flex text-yellow-400 text-[10px] md:text-xs">★★★★★</div>
+              <div
+                class="hidden sm:flex absolute -bottom-6 md:-bottom-8 left-1/2 transform -translate-x-1/2 bg-white rounded-lg md:rounded-xl shadow-2xl p-2 md:p-3 border border-gray-100 items-center gap-2 opacity-0 animate-fadeInUp delay-700"
+              >
+                <div class="flex text-yellow-400 text-[10px] md:text-xs">
+                  ★★★★★
+                </div>
                 <div>
-                  <p class="text-gray-800 font-bold text-[10px] md:text-xs">4.9/5 Rating</p>
-                  <p class="text-gray-400 text-[8px] md:text-[10px]">200+ Clients</p>
+                  <p class="text-gray-800 font-bold text-[10px] md:text-xs">
+                    4.9/5 Rating
+                  </p>
+                  <p class="text-gray-400 text-[8px] md:text-[10px]">
+                    200+ Clients
+                  </p>
                 </div>
               </div>
             </div>
@@ -409,36 +575,63 @@
       </div>
 
       <!-- Scroll Indicator - Hidden on mobile -->
-      <div class="hidden md:block absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce opacity-0 animate-fadeIn delay-700">
-        <div class="w-5 h-8 border-2 border-[#F0C03A]/50 rounded-full flex items-start justify-center p-1">
+      <div
+        class="hidden md:block absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce opacity-0 animate-fadeIn delay-700"
+      >
+        <div
+          class="w-5 h-8 border-2 border-[#F0C03A]/50 rounded-full flex items-start justify-center p-1"
+        >
           <div class="w-1 h-2 bg-[#F0C03A] rounded-full animate-pulse"></div>
         </div>
       </div>
     </section>
 
     <!-- STORY -->
-    <section class="py-12 md:py-16 bg-gradient-to-br from-gray-50 via-white to-yellow-50 relative overflow-hidden">
+    <section
+      class="py-12 md:py-16 bg-gradient-to-br from-gray-50 via-white to-yellow-50 relative overflow-hidden"
+    >
       <!-- Decorative Background Elements -->
-      <div class="absolute top-0 right-0 w-96 h-96 bg-yellow-100 rounded-full blur-3xl opacity-30"></div>
-      <div class="absolute bottom-0 left-0 w-80 h-80 bg-purple-100 rounded-full blur-3xl opacity-20"></div>
-      
+      <div
+        class="absolute top-0 right-0 w-96 h-96 bg-yellow-100 rounded-full blur-3xl opacity-30"
+      ></div>
+      <div
+        class="absolute bottom-0 left-0 w-80 h-80 bg-purple-100 rounded-full blur-3xl opacity-20"
+      ></div>
+
       <div class="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
         <div class="grid lg:grid-cols-2 gap-6 md:gap-12 items-center">
           <!-- Left: Content -->
           <div class="order-2 lg:order-1 opacity-0 animate-slideInLeft">
             <!-- Badge -->
-            <div class="inline-flex items-center gap-2 bg-[#F0C03A]/10 border-2 border-[#F0C03A]/30 text-[#F0C03A] px-3 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase mb-3">
+            <div
+              class="inline-flex items-center gap-2 bg-[#F0C03A]/10 border-2 border-[#F0C03A]/30 text-[#F0C03A] px-3 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase mb-3"
+            >
               <i class="fas fa-book-open text-xs"></i>
               Our Story
             </div>
 
             <!-- Heading -->
-            <h2 class="text-2xl md:text-3xl lg:text-4xl font-black text-gray-900 mb-3 leading-tight">
-              Born From a 
+            <h2
+              class="text-2xl md:text-3xl lg:text-4xl font-black text-gray-900 mb-3 leading-tight"
+            >
+              Born From a
               <span class="relative inline-block">
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#F0C03A] to-yellow-600">Love of Design</span>
-                <svg class="absolute -bottom-1 left-0 w-full" height="6" viewBox="0 0 200 6" fill="none">
-                  <path d="M2 4C50 2 100 1 150 3C180 4 195 4 198 4" stroke="#F0C03A" stroke-width="2" stroke-linecap="round"/>
+                <span
+                  class="text-transparent bg-clip-text bg-gradient-to-r from-[#F0C03A] to-yellow-600"
+                  >Love of Design</span
+                >
+                <svg
+                  class="absolute -bottom-1 left-0 w-full"
+                  height="6"
+                  viewBox="0 0 200 6"
+                  fill="none"
+                >
+                  <path
+                    d="M2 4C50 2 100 1 150 3C180 4 195 4 198 4"
+                    stroke="#F0C03A"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
                 </svg>
               </span>
             </h2>
@@ -446,62 +639,97 @@
             <!-- Description -->
             <div class="space-y-3 mb-5">
               <p class="text-gray-600 leading-relaxed text-sm">
-                PAGraphics was founded with a simple belief — that every organization, no matter the size, deserves world-class design. What started as a one-person studio continues to deliver exceptional creative solutions to clients across the globe.
+                PAGraphics was founded with a simple belief — that every
+                organization, no matter the size, deserves world-class design.
+                What started as a one-person studio continues to deliver
+                exceptional creative solutions to clients across the globe.
               </p>
               <p class="text-gray-600 leading-relaxed text-sm">
-                I specialize in serving churches, ministries, and faith-based organizations, but my work spans across industries. My mission is to tell your story visually — with clarity, beauty, and impact.
+                I specialize in serving churches, ministries, and faith-based
+                organizations, but my work spans across industries. My mission
+                is to tell your story visually — with clarity, beauty, and
+                impact.
               </p>
             </div>
 
             <!-- Feature List -->
             <div class="space-y-2 mb-5">
               <div class="flex items-center gap-2 group">
-                <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                <div
+                  class="w-7 h-7 rounded-lg bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform"
+                >
                   <i class="fas fa-check text-white text-xs"></i>
                 </div>
-                <p class="text-gray-700 font-medium text-xs md:text-sm">Global client base across 20+ countries</p>
+                <p class="text-gray-700 font-medium text-xs md:text-sm">
+                  Global client base across 20+ countries
+                </p>
               </div>
               <div class="flex items-center gap-2 group">
-                <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                <div
+                  class="w-7 h-7 rounded-lg bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform"
+                >
                   <i class="fas fa-check text-white text-xs"></i>
                 </div>
-                <p class="text-gray-700 font-medium text-xs md:text-sm">Specialized in faith-based design solutions</p>
+                <p class="text-gray-700 font-medium text-xs md:text-sm">
+                  Specialized in faith-based design solutions
+                </p>
               </div>
               <div class="flex items-center gap-2 group">
-                <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-pink-400 to-rose-500 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                <div
+                  class="w-7 h-7 rounded-lg bg-gradient-to-br from-pink-400 to-rose-500 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform"
+                >
                   <i class="fas fa-check text-white text-xs"></i>
                 </div>
-                <p class="text-gray-700 font-medium text-xs md:text-sm">Award-winning creative work</p>
+                <p class="text-gray-700 font-medium text-xs md:text-sm">
+                  Award-winning creative work
+                </p>
               </div>
             </div>
 
             <!-- CTA Button -->
             <div class="mt-6">
-              <a href="portfolio.html" class="inline-flex items-center gap-2 bg-gradient-to-r from-[#F0C03A] to-yellow-500 text-black px-5 py-2.5 rounded-xl font-bold text-xs md:text-sm hover:shadow-2xl hover:scale-105 transition-all duration-300 group">
+              <a
+                href="portfolio.html"
+                class="inline-flex items-center gap-2 bg-gradient-to-r from-[#F0C03A] to-yellow-500 text-black px-5 py-2.5 rounded-xl font-bold text-xs md:text-sm hover:shadow-2xl hover:scale-105 transition-all duration-300 group"
+              >
                 <span>View My Work</span>
-                <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform text-xs"></i>
+                <i
+                  class="fas fa-arrow-right group-hover:translate-x-1 transition-transform text-xs"
+                ></i>
               </a>
             </div>
           </div>
 
           <!-- Right: Founder Image -->
-          <div class="relative order-1 lg:order-2 opacity-0 animate-slideInRight delay-200">
+          <div
+            class="relative order-1 lg:order-2 opacity-0 animate-slideInRight delay-200"
+          >
             <div class="relative max-w-md mx-auto -mt-8 md:-mt-12">
               <!-- Main Founder Image - PNG with transparency -->
               <div class="relative">
-                <img src="public/pa.png" alt="Patricia Afonso - Founder" class="w-full h-auto object-contain drop-shadow-2xl" />
+                <img
+                  src="public/pa.png"
+                  alt="Patricia Afonso - Founder"
+                  class="w-full h-auto object-contain drop-shadow-2xl"
+                />
               </div>
 
               <!-- Decorative Floating Element - Bottom Left Only -->
-              <div class="absolute bottom-20 -left-4 w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-purple-400 to-pink-400 shadow-xl animate-floatReverse opacity-70 -z-10"></div>
+              <div
+                class="absolute bottom-20 -left-4 w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-purple-400 to-pink-400 shadow-xl animate-floatReverse opacity-70 -z-10"
+              ></div>
             </div>
           </div>
         </div>
       </div>
 
       <!-- Floating Decorative Elements -->
-      <div class="absolute top-20 left-10 w-20 h-20 rounded-full bg-yellow-200 opacity-20 animate-float"></div>
-      <div class="absolute bottom-32 right-20 w-16 h-16 rounded-full bg-purple-200 opacity-20 animate-floatReverse"></div>
+      <div
+        class="absolute top-20 left-10 w-20 h-20 rounded-full bg-yellow-200 opacity-20 animate-float"
+      ></div>
+      <div
+        class="absolute bottom-32 right-20 w-16 h-16 rounded-full bg-purple-200 opacity-20 animate-floatReverse"
+      ></div>
     </section>
 
     <!-- VALUES -->
@@ -721,9 +949,7 @@
           </div>
         </div>
         <div class="grid grid-cols-2 gap-4">
-          <div
-            class="bg-primary rounded-2xl p-7 text-white"
-          >
+          <div class="bg-primary rounded-2xl p-7 text-white">
             <h3 class="text-4xl font-black mb-1">500+</h3>
             <p class="text-orange-100 text-sm">Projects Completed</p>
           </div>
@@ -735,9 +961,7 @@
             <h3 class="text-4xl font-black gradient-text mb-1">8+</h3>
             <p class="text-gray-500 text-sm">Years Experience</p>
           </div>
-          <div
-            class="bg-primary rounded-2xl p-7 text-white"
-          >
+          <div class="bg-primary rounded-2xl p-7 text-white">
             <h3 class="text-4xl font-black mb-1">50+</h3>
             <p class="text-orange-100 text-sm">Awards Won</p>
           </div>
@@ -765,7 +989,7 @@
     <!-- FOOTER -->
     <footer
       class="bg-[#0d0d14] text-white"
-      style="border-top: 3px solid #ff671f;"
+      style="border-top: 3px solid #ff671f"
     >
       <div
         class="w-full overflow-hidden"
@@ -831,9 +1055,7 @@
               <a
                 href="services.html"
                 class="flex items-center gap-2 text-gray-400 hover:text-white transition group"
-                ><span class="text-primary group-hover:text-white"
-                  >›</span
-                >
+                ><span class="text-primary group-hover:text-white">›</span>
                 Graphic Design</a
               >
             </li>
@@ -841,9 +1063,7 @@
               <a
                 href="services.html"
                 class="flex items-center gap-2 text-gray-400 hover:text-white transition group"
-                ><span class="text-primary group-hover:text-white"
-                  >›</span
-                >
+                ><span class="text-primary group-hover:text-white">›</span>
                 Motion Graphics</a
               >
             </li>
@@ -851,9 +1071,7 @@
               <a
                 href="services.html"
                 class="flex items-center gap-2 text-gray-400 hover:text-white transition group"
-                ><span class="text-primary group-hover:text-white"
-                  >›</span
-                >
+                ><span class="text-primary group-hover:text-white">›</span>
                 Church Media</a
               >
             </li>
@@ -861,10 +1079,8 @@
               <a
                 href="services.html"
                 class="flex items-center gap-2 text-gray-400 hover:text-white transition group"
-                ><span class="text-primary group-hover:text-white"
-                  >›</span
-                >
-                Web Design</a
+                ><span class="text-primary group-hover:text-white">›</span> Web
+                Design</a
               >
             </li>
           </ul>
@@ -880,9 +1096,7 @@
               <a
                 href="about.html"
                 class="flex items-center gap-2 text-gray-400 hover:text-white transition group"
-                ><span class="text-primary group-hover:text-white"
-                  >›</span
-                >
+                ><span class="text-primary group-hover:text-white">›</span>
                 About Us</a
               >
             </li>
@@ -890,9 +1104,7 @@
               <a
                 href="portfolio.html"
                 class="flex items-center gap-2 text-gray-400 hover:text-white transition group"
-                ><span class="text-primary group-hover:text-white"
-                  >›</span
-                >
+                ><span class="text-primary group-hover:text-white">›</span>
                 Portfolio</a
               >
             </li>
@@ -900,9 +1112,7 @@
               <a
                 href="contact.html"
                 class="flex items-center gap-2 text-gray-400 hover:text-white transition group"
-                ><span class="text-primary group-hover:text-white"
-                  >›</span
-                >
+                ><span class="text-primary group-hover:text-white">›</span>
                 Contact</a
               >
             </li>
@@ -910,9 +1120,7 @@
               <a
                 href="../index.php?page=login"
                 class="flex items-center gap-2 text-gray-400 hover:text-white transition group"
-                ><span class="text-primary group-hover:text-white"
-                  >›</span
-                >
+                ><span class="text-primary group-hover:text-white">›</span>
                 Admin Login</a
               >
             </li>
