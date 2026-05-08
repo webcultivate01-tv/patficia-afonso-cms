@@ -1,0 +1,51 @@
+/* Mobile Menu Slide from Right */
+#mobileMenu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  bottom: 0;
+  width: 280px;
+  max-width: 85vw;
+  background: white;
+  border-left: 2px solid #7c3aed;
+  padding-top: 80px;
+  z-index: 999;
+  transition: right 0.3s ease;
+  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.3);
+  display: flex !important;
+  flex-direction: column;
+  gap: 0;
+}
+
+#mobileMenu.open {
+  right: 0;
+}
+
+#mobileMenu a {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #f3f4f6;
+  transition: all 0.3s;
+  color: #374151 !important;
+  font-weight: 500;
+}
+
+#mobileMenu a:hover {
+  background: #f3e8ff;
+  padding-left: 2rem;
+  color: #6d28d9 !important;
+}
+
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}

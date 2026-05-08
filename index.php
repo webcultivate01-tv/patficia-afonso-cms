@@ -17,6 +17,8 @@ require_once __DIR__ . '/app/controllers/SearchController.php';
 require_once __DIR__ . '/app/controllers/ProfileController.php';
 require_once __DIR__ . '/app/controllers/AgingController.php';
 require_once __DIR__ . '/app/controllers/StatementController.php';
+require_once __DIR__ . '/app/controllers/PortfolioController.php';
+require_once __DIR__ . '/app/controllers/EnquiryController.php';
 
 $page   = $_GET['page']   ?? 'home';
 $action = $_GET['action'] ?? 'index';
@@ -36,6 +38,13 @@ if ($page === 'login') {
 if ($page === 'logout') {
     $auth = new AuthController();
     $auth->logout();
+    exit;
+}
+
+// Public enquiry submission (no login required)
+if ($page === 'enquiries' && $action === 'submit') {
+    $enquiry = new EnquiryController();
+    $enquiry->submit();
     exit;
 }
 
@@ -60,6 +69,8 @@ $controllers = [
     'profile'   => 'ProfileController',
     'aging'     => 'AgingController',
     'statement' => 'StatementController',
+    'portfolio' => 'PortfolioController',
+    'enquiries' => 'EnquiryController',
 ];
 
 if (!isset($controllers[$page])) {

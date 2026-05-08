@@ -88,6 +88,8 @@ $currentPage = $_GET['page'] ?? 'dashboard';
                 'reports'   => ['icon' => 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', 'label' => 'Reports',   'group' => 'main'],
                 'aging'     => ['icon' => 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z', 'label' => 'Aging',     'group' => 'main'],
                 'statement' => ['icon' => 'M16 4v12l-4-2-4 2V4M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z', 'label' => 'Statement', 'group' => 'main'],
+                'portfolio' => ['icon' => 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z', 'label' => 'Portfolio', 'group' => 'main'],
+                'enquiries' => ['icon' => 'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z', 'label' => 'Enquiries', 'group' => 'main'],
                 'search'    => ['icon' => 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z', 'label' => 'Search',    'group' => 'tools'],
                 'admins'    => ['icon' => 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z', 'label' => 'Admins',    'group' => 'settings'],
                 'profile'   => ['icon' => 'M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0m6 2a9 9 0 11-18 0 9 9 0 0118 0z', 'label' => 'My Profile', 'group' => 'settings'], ['icon' => 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z', 'label' => 'Admins', 'group' => 'settings'],
@@ -110,6 +112,9 @@ $currentPage = $_GET['page'] ?? 'dashboard';
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="<?= $info['icon'] ?>"/>
                 </svg>
                 <?= $info['label'] ?>
+                <?php if ($pg === 'enquiries'): ?>
+                <span id="enquiryBadge" class="ml-auto bg-orange-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full min-w-[20px] text-center hidden"></span>
+                <?php endif; ?>
             </a>
             <?php endforeach; ?>
         </nav>
@@ -176,3 +181,25 @@ $currentPage = $_GET['page'] ?? 'dashboard';
 
 </body>
 </html>
+
+<script>
+// Check for new enquiries every 30 seconds
+function checkEnquiries() {
+    fetch('index.php?page=enquiries&action=count')
+        .then(res => res.json())
+        .then(data => {
+            const badge = document.getElementById('enquiryBadge');
+            if (data.count > 0) {
+                badge.textContent = data.count;
+                badge.classList.remove('hidden');
+            } else {
+                badge.classList.add('hidden');
+            }
+        })
+        .catch(err => console.error('Failed to check enquiries:', err));
+}
+
+// Check immediately and then every 30 seconds
+checkEnquiries();
+setInterval(checkEnquiries, 30000);
+</script>

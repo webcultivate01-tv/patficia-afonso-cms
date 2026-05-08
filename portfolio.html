@@ -1,254 +1,833 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio – PAGraphics</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: { primary: '#6d28d9', accent: '#7c3aed' },
-          fontFamily: { sans: ['Inter', 'sans-serif'] }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio – PAGraphics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#F0C03A", accent: "#F0C03A" },
+            fontFamily: { sans: ["Inter", "sans-serif"] },
+          },
+        },
+      };
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      .gradient-text {
+        color: #F0C03A;
+      }
+      .card-hover {
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      .card-hover:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 20px 60px rgba(240, 192, 58, 0.2);
+      }
+      .nav-link {
+        position: relative;
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #F0C03A;
+        transition: width 0.3s ease;
+      }
+      .nav-link:hover::after {
+        width: 100%;
+      }
+      [x-cloak] {
+        display: none !important;
+      }
+      .big-title {
+        font-family: "Anton", sans-serif;
+        letter-spacing: 2px;
+      }
+      .hero-grid-item {
+        transition:
+          transform 0.4s ease,
+          box-shadow 0.4s ease;
+      }
+      .hero-grid-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 50px rgba(240, 192, 58, 0.15);
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
         }
       }
-    }
-  </script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <style>
-    html { scroll-behavior: smooth; }
-    .gradient-text { background: linear-gradient(135deg,#6d28d9,#a855f7); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-    .card-hover { transition: transform .25s, box-shadow .25s; }
-    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(109,40,217,.12); }
-    .nav-link { position:relative; }
-    .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:#6d28d9; transition:width .3s; }
-    .nav-link:hover::after { width:100%; }
-    .port-item .overlay { opacity:0; transition:opacity .3s; }
-    .port-item:hover .overlay { opacity:1; }
-    .filter-btn.active { background:#6d28d9; color:#fff; }
-    .port-item { transition: all .3s; }
-    .port-item.hidden-item { display:none; }
-  </style>
-</head>
-<body class="font-sans bg-white text-gray-800 overflow-x-hidden">
-
-  <!-- NAVBAR -->
-  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="index.html" class="text-2xl font-black text-gray-900">PA<span class="gradient-text">Graphics</span></a>
-      <ul class="hidden md:flex items-center gap-8">
-        <li><a href="index.html" class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm transition-colors">Home</a></li>
-        <li><a href="about.html" class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm transition-colors">About</a></li>
-        <li><a href="services.html" class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm transition-colors">Services</a></li>
-        <li><a href="portfolio.html" class="nav-link text-primary font-semibold text-sm">Portfolio</a></li>
-        <li><a href="contact.html" class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm transition-colors">Contact</a></li>
-        <li><a href="contact.html" class="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-accent transition-colors shadow-lg shadow-purple-200">Get Started</a></li>
-      </ul>
-      <button id="hamburger" class="md:hidden text-gray-700 text-xl"><i class="fas fa-bars"></i></button>
-    </div>
-    <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-4">
-      <a href="index.html" class="text-gray-600 font-medium text-sm">Home</a>
-      <a href="about.html" class="text-gray-600 font-medium text-sm">About</a>
-      <a href="services.html" class="text-gray-600 font-medium text-sm">Services</a>
-      <a href="portfolio.html" class="text-primary font-semibold text-sm">Portfolio</a>
-      <a href="contact.html" class="text-gray-600 font-medium text-sm">Contact</a>
-      <a href="contact.html" class="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold text-center">Get Started</a>
-    </div>
-  </nav>
-
-  <!-- PAGE HERO -->
-  <section class="pt-32 pb-20 bg-gradient-to-br from-purple-50 to-white">
-    <div class="max-w-7xl mx-auto px-6 text-center">
-      <span class="bg-purple-100 text-primary px-4 py-1.5 rounded-full text-xs font-semibold">Our Work</span>
-      <h1 class="text-5xl font-black text-gray-900 mt-5 mb-5">Creative <span class="gradient-text">Portfolio</span></h1>
-      <p class="text-gray-500 text-lg max-w-2xl mx-auto leading-relaxed">A showcase of our best work across branding, motion, church media, and digital design.</p>
-    </div>
-  </section>
-
-  <!-- FILTER + GRID -->
-  <section class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-6">
-
-      <!-- Filter Buttons -->
-      <div class="flex flex-wrap justify-center gap-3 mb-12">
-        <button class="filter-btn active px-5 py-2 rounded-full text-sm font-semibold border border-gray-200 hover:border-primary transition-all" data-filter="all">All Projects</button>
-        <button class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-gray-200 hover:border-primary transition-all text-gray-600" data-filter="branding">Branding</button>
-        <button class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-gray-200 hover:border-primary transition-all text-gray-600" data-filter="motion">Motion</button>
-        <button class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-gray-200 hover:border-primary transition-all text-gray-600" data-filter="church">Church Media</button>
-        <button class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-gray-200 hover:border-primary transition-all text-gray-600" data-filter="social">Social Media</button>
-        <button class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-gray-200 hover:border-primary transition-all text-gray-600" data-filter="web">Web Design</button>
-      </div>
-
-      <!-- Portfolio Grid -->
-      <div class="grid md:grid-cols-3 gap-6" id="portfolioGrid">
-
-        <div class="port-item rounded-3xl overflow-hidden relative group h-64 card-hover" data-cat="branding" style="background:linear-gradient(135deg,#6d28d9,#a855f7)">
-          <div class="absolute inset-0 flex items-center justify-center"><i class="fas fa-crown text-white/20 text-7xl"></i></div>
-          <div class="overlay absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
-            <span class="text-purple-300 text-xs font-semibold uppercase tracking-widest">Branding</span>
-            <h4 class="text-white font-bold text-lg mt-1">Elevate Church Rebrand</h4>
-            <p class="text-gray-300 text-xs mt-1">Full brand identity overhaul</p>
-          </div>
-        </div>
-
-        <div class="port-item rounded-3xl overflow-hidden relative group h-64 card-hover" data-cat="motion" style="background:linear-gradient(135deg,#0ea5e9,#6366f1)">
-          <div class="absolute inset-0 flex items-center justify-center"><i class="fas fa-film text-white/20 text-7xl"></i></div>
-          <div class="overlay absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
-            <span class="text-blue-300 text-xs font-semibold uppercase tracking-widest">Motion</span>
-            <h4 class="text-white font-bold text-lg mt-1">Sunday Opener Pack</h4>
-            <p class="text-gray-300 text-xs mt-1">Animated church intro series</p>
-          </div>
-        </div>
-
-        <div class="port-item rounded-3xl overflow-hidden relative group h-64 card-hover" data-cat="social" style="background:linear-gradient(135deg,#f59e0b,#ef4444)">
-          <div class="absolute inset-0 flex items-center justify-center"><i class="fas fa-hashtag text-white/20 text-7xl"></i></div>
-          <div class="overlay absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
-            <span class="text-yellow-300 text-xs font-semibold uppercase tracking-widest">Social Media</span>
-            <h4 class="text-white font-bold text-lg mt-1">Kingdom Vibes Kit</h4>
-            <p class="text-gray-300 text-xs mt-1">50-piece social media template pack</p>
-          </div>
-        </div>
-
-        <div class="port-item rounded-3xl overflow-hidden relative group h-64 card-hover" data-cat="web" style="background:linear-gradient(135deg,#10b981,#0ea5e9)">
-          <div class="absolute inset-0 flex items-center justify-center"><i class="fas fa-globe text-white/20 text-7xl"></i></div>
-          <div class="overlay absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
-            <span class="text-green-300 text-xs font-semibold uppercase tracking-widest">Web Design</span>
-            <h4 class="text-white font-bold text-lg mt-1">Grace Ministry Site</h4>
-            <p class="text-gray-300 text-xs mt-1">Full church website redesign</p>
-          </div>
-        </div>
-
-        <div class="port-item rounded-3xl overflow-hidden relative group h-64 card-hover" data-cat="branding" style="background:linear-gradient(135deg,#8b5cf6,#ec4899)">
-          <div class="absolute inset-0 flex items-center justify-center"><i class="fas fa-star text-white/20 text-7xl"></i></div>
-          <div class="overlay absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
-            <span class="text-pink-300 text-xs font-semibold uppercase tracking-widest">Branding</span>
-            <h4 class="text-white font-bold text-lg mt-1">Conference Branding</h4>
-            <p class="text-gray-300 text-xs mt-1">Annual conference visual identity</p>
-          </div>
-        </div>
-
-        <div class="port-item rounded-3xl overflow-hidden relative group h-64 card-hover" data-cat="church" style="background:linear-gradient(135deg,#f97316,#eab308)">
-          <div class="absolute inset-0 flex items-center justify-center"><i class="fas fa-church text-white/20 text-7xl"></i></div>
-          <div class="overlay absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
-            <span class="text-orange-300 text-xs font-semibold uppercase tracking-widest">Church Media</span>
-            <h4 class="text-white font-bold text-lg mt-1">Worship Background Pack</h4>
-            <p class="text-gray-300 text-xs mt-1">30 premium worship backgrounds</p>
-          </div>
-        </div>
-
-        <div class="port-item rounded-3xl overflow-hidden relative group h-64 card-hover" data-cat="motion" style="background:linear-gradient(135deg,#ec4899,#8b5cf6)">
-          <div class="absolute inset-0 flex items-center justify-center"><i class="fas fa-play text-white/20 text-7xl"></i></div>
-          <div class="overlay absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
-            <span class="text-pink-300 text-xs font-semibold uppercase tracking-widest">Motion</span>
-            <h4 class="text-white font-bold text-lg mt-1">Lyric Video Series</h4>
-            <p class="text-gray-300 text-xs mt-1">Cinematic worship lyric videos</p>
-          </div>
-        </div>
-
-        <div class="port-item rounded-3xl overflow-hidden relative group h-64 card-hover" data-cat="social" style="background:linear-gradient(135deg,#14b8a6,#6366f1)">
-          <div class="absolute inset-0 flex items-center justify-center"><i class="fas fa-mobile-alt text-white/20 text-7xl"></i></div>
-          <div class="overlay absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
-            <span class="text-teal-300 text-xs font-semibold uppercase tracking-widest">Social Media</span>
-            <h4 class="text-white font-bold text-lg mt-1">Faith & Fire Campaign</h4>
-            <p class="text-gray-300 text-xs mt-1">Multi-platform social campaign</p>
-          </div>
-        </div>
-
-        <div class="port-item rounded-3xl overflow-hidden relative group h-64 card-hover" data-cat="branding" style="background:linear-gradient(135deg,#1e40af,#7c3aed)">
-          <div class="absolute inset-0 flex items-center justify-center"><i class="fas fa-building text-white/20 text-7xl"></i></div>
-          <div class="overlay absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
-            <span class="text-blue-300 text-xs font-semibold uppercase tracking-widest">Branding</span>
-            <h4 class="text-white font-bold text-lg mt-1">Nexus Business Brand</h4>
-            <p class="text-gray-300 text-xs mt-1">Corporate identity package</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- STATS BAR -->
-  <section class="py-16 bg-gray-50 border-y border-gray-100">
-    <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-      <div><h3 class="text-4xl font-black gradient-text">500+</h3><p class="text-gray-500 text-sm mt-1">Projects Completed</p></div>
-      <div><h3 class="text-4xl font-black gradient-text">50+</h3><p class="text-gray-500 text-sm mt-1">Industries Served</p></div>
-      <div><h3 class="text-4xl font-black gradient-text">200+</h3><p class="text-gray-500 text-sm mt-1">Happy Clients</p></div>
-      <div><h3 class="text-4xl font-black gradient-text">4.9★</h3><p class="text-gray-500 text-sm mt-1">Average Rating</p></div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="py-20 bg-gradient-to-br from-primary to-purple-600">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-black text-white mb-4">Love What You See?</h2>
-      <p class="text-purple-200 mb-8 text-lg">Let's create something just as amazing for your brand.</p>
-      <a href="contact.html" class="bg-white text-primary px-8 py-4 rounded-full font-bold text-sm hover:bg-purple-50 transition-all shadow-xl inline-block">Start Your Project →</a>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="bg-gray-900 text-white">
-    <div class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-4 gap-10">
-      <div class="md:col-span-2">
-        <a href="index.html" class="text-2xl font-black">PA<span class="gradient-text">Graphics</span></a>
-        <p class="text-gray-400 text-sm mt-3 mb-5 leading-relaxed max-w-xs">Crafting visual stories that inspire, transform, and leave a lasting impression.</p>
-        <div class="flex gap-3">
-          <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all text-sm"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all text-sm"><i class="fab fa-facebook"></i></a>
-          <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all text-sm"><i class="fab fa-youtube"></i></a>
-          <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-all text-sm"><i class="fab fa-behance"></i></a>
-        </div>
-      </div>
-      <div>
-        <h4 class="font-bold text-sm mb-4">Services</h4>
-        <ul class="space-y-2 text-gray-400 text-sm">
-          <li><a href="services.html" class="hover:text-white transition-colors">Graphic Design</a></li>
-          <li><a href="services.html" class="hover:text-white transition-colors">Motion Graphics</a></li>
-          <li><a href="services.html" class="hover:text-white transition-colors">Church Media</a></li>
-          <li><a href="services.html" class="hover:text-white transition-colors">Web Design</a></li>
+      .animate-fade-in {
+        animation: fadeInUp 0.6s ease forwards;
+      }
+      .gallery-img {
+        transition:
+          transform 0.3s ease,
+          opacity 0.3s ease;
+      }
+      .gallery-img:hover {
+        transform: scale(1.05);
+        opacity: 0.85;
+      }
+    </style>
+  </head>
+  <body class="font-sans bg-white text-gray-800 overflow-x-hidden">
+    <!-- NAVBAR -->
+    <nav
+      id="navbar"
+      class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"
+      >
+        <a href="index.html" class="text-2xl font-black text-gray-900"
+          >PA<span class="gradient-text">Graphics</span></a
+        >
+        <ul class="hidden md:flex items-center gap-8">
+          <li>
+            <a
+              href="index.html"
+              class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm transition-colors"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="about.html"
+              class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm transition-colors"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="services.html"
+              class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm transition-colors"
+              >Services</a
+            >
+          </li>
+          <li>
+            <a
+              href="portfolio.html"
+              class="nav-link text-primary font-semibold text-sm"
+              >Portfolio</a
+            >
+          </li>
+          <li>
+            <a
+              href="contact.html"
+              class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm transition-colors"
+              >Contact</a
+            >
+          </li>
+          <li>
+            <a
+              href="contact.html"
+              class="bg-primary text-black px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-accent transition-colors shadow-lg shadow-yellow-200"
+              >Get Started</a
+            >
+          </li>
         </ul>
+        <button id="hamburger" class="md:hidden text-gray-700 text-xl">
+          <i class="fas fa-bars"></i>
+        </button>
       </div>
-      <div>
-        <h4 class="font-bold text-sm mb-4">Company</h4>
-        <ul class="space-y-2 text-gray-400 text-sm">
-          <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
-          <li><a href="portfolio.html" class="hover:text-white transition-colors">Portfolio</a></li>
-          <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
-          <li><a href="../index.php?page=login" class="hover:text-white transition-colors">Admin Login</a></li>
-        </ul>
+      <div
+        id="mobileMenu"
+        class="hidden md:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-4"
+      >
+        <a href="index.html" class="text-gray-600 font-medium text-sm">Home</a>
+        <a href="about.html" class="text-gray-600 font-medium text-sm">About</a>
+        <a href="services.html" class="text-gray-600 font-medium text-sm"
+          >Services</a
+        >
+        <a href="portfolio.html" class="text-primary font-semibold text-sm"
+          >Portfolio</a
+        >
+        <a href="contact.html" class="text-gray-600 font-medium text-sm"
+          >Contact</a
+        >
+        <a
+          href="contact.html"
+          class="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold text-center"
+          >Get Started</a
+        >
       </div>
-    </div>
-    <div class="border-t border-white/10 py-5 text-center text-gray-500 text-xs">© 2025 PAGraphics. All rights reserved.</div>
-  </footer>
+    </nav>
 
-  <script>
-    document.getElementById('hamburger').addEventListener('click', () => {
-      document.getElementById('mobileMenu').classList.toggle('hidden');
-    });
+    <!-- PORTFOLIO HERO -->
+    <section class="relative bg-gray-900 pt-20 overflow-hidden">
+      <!-- Animated Background Elements -->
+      <div class="absolute inset-0 opacity-10">
+        <div
+          class="absolute top-20 left-10 w-72 h-72 bg-white rounded-full blur-3xl"
+        ></div>
+        <div
+          class="absolute bottom-20 right-10 w-96 h-96 bg-primary rounded-full blur-3xl"
+        ></div>
+      </div>
 
-    // Portfolio filter
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const portItems = document.querySelectorAll('.port-item');
+      <div class="max-w-6xl mx-auto px-6 py-14 relative z-10">
+        <!-- Hero Content -->
+        <div class="text-center mb-10 animate-fade-in">
+          <span
+            class="inline-block bg-white/20 backdrop-blur-sm text-white px-5 py-1.5 rounded-full text-xs font-semibold mb-3 border border-white/30"
+            >My Work</span
+          >
+          <h1
+            class="text-3xl md:text-5xl lg:text-6xl font-black text-white mb-3 leading-tight"
+          >
+            Creative <span class="text-primary">Portfolio</span>
+          </h1>
+          <p
+            class="text-gray-300 text-sm md:text-base max-w-xl mx-auto leading-relaxed"
+          >
+            Explore our collection of stunning designs and creative excellence.
+          </p>
+        </div>
 
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active', 'text-white'));
-        filterBtns.forEach(b => b.classList.add('text-gray-600'));
-        btn.classList.add('active');
-        btn.classList.remove('text-gray-600');
+        <!-- Single Row Image Grid -->
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-3">
+          <div
+            class="rounded-2xl overflow-hidden shadow-xl hero-grid-item animate-fade-in relative group"
+            style="animation-delay: 0.1s"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df"
+              class="w-full h-full object-cover min-h-[120px] transition-transform duration-500 group-hover:scale-110"
+              alt="Design work"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            ></div>
+          </div>
 
-        const filter = btn.dataset.filter;
-        portItems.forEach(item => {
-          if (filter === 'all' || item.dataset.cat === filter) {
-            item.classList.remove('hidden-item');
-          } else {
-            item.classList.add('hidden-item');
+          <div
+            class="rounded-2xl overflow-hidden shadow-xl hero-grid-item animate-fade-in relative group"
+            style="animation-delay: 0.2s"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1559028012-481c04fa702d"
+              class="w-full h-full object-cover min-h-[120px] transition-transform duration-500 group-hover:scale-110"
+              alt="Featured work"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            ></div>
+          </div>
+
+          <!-- Stats Card -->
+          <div
+            class="rounded-2xl overflow-hidden shadow-xl hero-grid-item animate-fade-in relative group"
+            style="animation-delay: 0.2s"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1519408469771-2586093c3f14?q=80&w=702&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              class="w-full h-full object-cover min-h-[120px] transition-transform duration-500 group-hover:scale-110"
+              alt="Featured work"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            ></div>
+          </div>
+
+          <div
+            class="rounded-2xl overflow-hidden shadow-xl hero-grid-item animate-fade-in relative group"
+            style="animation-delay: 0.4s"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+              class="w-full h-full object-cover min-h-[120px] transition-transform duration-500 group-hover:scale-110"
+              alt="Design showcase"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            ></div>
+          </div>
+
+          <div
+            class="rounded-2xl overflow-hidden shadow-xl hero-grid-item animate-fade-in relative group"
+            style="animation-delay: 0.5s"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1545235617-9465d2a55698"
+              class="w-full h-full object-cover min-h-[120px] transition-transform duration-500 group-hover:scale-110"
+              alt="Creative project"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            ></div>
+          </div>
+
+          <div
+            class="rounded-2xl overflow-hidden shadow-xl hero-grid-item animate-fade-in relative group"
+            style="animation-delay: 0.6s"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
+              class="w-full h-full object-cover min-h-[120px] transition-transform duration-500 group-hover:scale-110"
+              alt="Portfolio item"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            ></div>
+          </div>
+
+          <div
+            class="rounded-2xl overflow-hidden shadow-xl hero-grid-item animate-fade-in relative group"
+            style="animation-delay: 0.7s"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1492724441997-5dc865305da7"
+              class="w-full h-full object-cover min-h-[120px] transition-transform duration-500 group-hover:scale-110"
+              alt="Creative work"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            ></div>
+          </div>
+
+          <div
+            class="rounded-2xl overflow-hidden shadow-xl hero-grid-item animate-fade-in relative group"
+            style="animation-delay: 0.8s"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1541795083-1b160cf4f3d7"
+              class="w-full h-full object-cover min-h-[120px] transition-transform duration-500 group-hover:scale-110"
+              alt="Web design"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            ></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wave Divider -->
+      <div
+        class="w-full overflow-hidden"
+        style="line-height: 0; margin-bottom: -1px; margin-top: 2.5rem"
+      >
+        <svg
+          viewBox="0 0 1440 80"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+          style="display: block; width: 100%; height: 80px"
+        >
+          <path
+            d="M0,40 C240,70 480,10 720,40 C960,70 1200,10 1440,40 L1440,80 L0,80 Z"
+            fill="#ffffff"
+          />
+        </svg>
+      </div>
+    </section>
+
+    <!-- IMAGE GALLERY -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-8">
+          <span
+            class="bg-yellow-100 text-primary px-4 py-1.5 rounded-full text-xs font-semibold"
+            >Gallery</span
+          >
+          <h2 class="text-4xl font-black text-gray-900 mt-5 mb-4">
+            Visual <span class="gradient-text">Showcase</span>
+          </h2>
+          <p class="text-gray-500 text-lg max-w-2xl mx-auto">
+            Click any image to view in full screen
+          </p>
+        </div>
+
+        <div
+          x-data="{
+        activeCategory: 'all',
+        categories: [],
+        allImages: [],
+        imageGalleryOpened: false,
+        imageGalleryActiveUrl: null,
+        imageGalleryImageIndex: null,
+        async loadPortfolio() {
+          try {
+            const response = await fetch('api-portfolio.php');
+            const data = await response.json();
+            this.categories = data;
+            this.allImages = data.flatMap(cat => 
+              cat.images.map(img => ({ ...img, categoryId: cat.id, categoryName: cat.name }))
+            );
+          } catch (error) {
+            console.error('Error loading portfolio:', error);
           }
-        });
+        },
+        get filteredImages() {
+          if (this.activeCategory === 'all') return this.allImages;
+          return this.allImages.filter(img => img.categoryId === this.activeCategory);
+        },
+        imageGalleryOpen(event) {
+          this.imageGalleryImageIndex = event.target.dataset.index;
+          this.imageGalleryActiveUrl = event.target.src;
+          this.imageGalleryOpened = true;
+        },
+        imageGalleryClose() {
+          this.imageGalleryOpened = false;
+          setTimeout(() => this.imageGalleryActiveUrl = null, 300);
+        },
+        imageGalleryNext(){
+          const visibleImages = this.$refs.gallery.querySelectorAll('img');
+          if(this.imageGalleryImageIndex == visibleImages.length){
+            this.imageGalleryImageIndex = 1;
+          } else {
+            this.imageGalleryImageIndex = parseInt(this.imageGalleryImageIndex) + 1;
+          }
+          this.imageGalleryActiveUrl = visibleImages[this.imageGalleryImageIndex - 1].src;
+        },
+        imageGalleryPrev() {
+          const visibleImages = this.$refs.gallery.querySelectorAll('img');
+          if(this.imageGalleryImageIndex == 1){
+            this.imageGalleryImageIndex = visibleImages.length;
+          } else {
+            this.imageGalleryImageIndex = parseInt(this.imageGalleryImageIndex) - 1;
+          }
+          this.imageGalleryActiveUrl = visibleImages[this.imageGalleryImageIndex - 1].src;
+        }
+      }"
+          @image-gallery-next.window="imageGalleryNext()"
+          @image-gallery-prev.window="imageGalleryPrev()"
+          @keyup.right.window="imageGalleryNext();"
+          @keyup.left.window="imageGalleryPrev();"
+          x-init="await loadPortfolio(); $nextTick(() => {
+            const images = $refs.gallery.querySelectorAll('img');
+            images.forEach((img, i) => img.setAttribute('data-index', i + 1));
+          })"
+          class="w-full h-full select-none"
+        >
+          <!-- Category Filter -->
+          <div class="flex flex-wrap justify-center gap-3 mb-12">
+            <button
+              @click="activeCategory = 'all'"
+              :class="activeCategory === 'all' ? 'bg-primary text-white' : 'text-gray-600 hover:border-primary'"
+              class="px-5 py-2 rounded-full text-sm font-semibold border border-gray-200 transition-all"
+            >
+              All Projects
+            </button>
+            <template x-for="category in categories" :key="category.id">
+              <button
+                @click="activeCategory = category.id"
+                :class="activeCategory === category.id ? 'bg-primary text-white' : 'text-gray-600 hover:border-primary'"
+                class="px-5 py-2 rounded-full text-sm font-semibold border border-gray-200 transition-all"
+                x-text="category.name"
+              >
+              </button>
+            </template>
+          </div>
+
+          <div class="max-w-7xl mx-auto">
+            <ul
+              x-ref="gallery"
+              class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px]"
+            >
+              <template x-for="(image, index) in filteredImages" :key="image.id">
+                <li
+                  x-transition:enter="transition ease-out duration-300"
+                  x-transition:enter-start="opacity-0 scale-90"
+                  x-transition:enter-end="opacity-100 scale-100"
+                  :class="index % 7 === 0 ? 'row-span-2' : (index % 5 === 0 ? 'col-span-2' : '')"
+                >
+                  <img
+                    x-on:click="imageGalleryOpen"
+                    :src="image.url"
+                    :alt="image.categoryName"
+                    class="gallery-img object-cover select-none w-full h-full bg-gray-200 rounded-2xl cursor-zoom-in shadow-md"
+                  />
+                </li>
+              </template>
+            </ul>
+            <div x-show="filteredImages.length === 0" class="text-center py-20">
+              <p class="text-gray-500 text-lg">No images found in this category.</p>
+            </div>
+          </div>
+
+          <!-- Lightbox Modal -->
+          <template x-teleport="body">
+            <div
+              x-show="imageGalleryOpened"
+              x-transition:enter="transition ease-in-out duration-300"
+              x-transition:enter-start="opacity-0"
+              x-transition:leave="transition ease-in-out duration-300"
+              x-transition:leave-end="opacity-0"
+              @click="imageGalleryClose"
+              @keydown.window.escape="imageGalleryClose"
+              x-trap.inert.noscroll="imageGalleryOpened"
+              class="fixed inset-0 z-[99] flex items-center justify-center bg-black bg-opacity-90 select-none cursor-zoom-out"
+              x-cloak
+            >
+              <div
+                class="relative flex items-center justify-center w-11/12 xl:w-4/5 h-11/12"
+              >
+                <!-- Previous Button -->
+                <button
+                  @click="$event.stopPropagation(); $dispatch('image-gallery-prev')"
+                  class="absolute left-0 flex items-center justify-center text-white translate-x-10 rounded-full cursor-pointer xl:-translate-x-24 2xl:-translate-x-32 bg-white/10 w-14 h-14 hover:bg-white/20 transition-all backdrop-blur-sm border border-white/20"
+                >
+                  <svg
+                    class="w-6 h-6"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M15.75 19.5L8.25 12l7.5-7.5"
+                    />
+                  </svg>
+                </button>
+
+                <!-- Image -->
+                <img
+                  x-show="imageGalleryOpened"
+                  x-transition:enter="transition ease-in-out duration-300"
+                  x-transition:enter-start="opacity-0 transform scale-50"
+                  x-transition:leave="transition ease-in-out duration-300"
+                  x-transition:leave-end="opacity-0 transform scale-50"
+                  class="object-contain object-center w-full h-full select-none cursor-zoom-out rounded-2xl"
+                  :src="imageGalleryActiveUrl"
+                  alt="Gallery image"
+                />
+
+                <!-- Next Button -->
+                <button
+                  @click="$event.stopPropagation(); $dispatch('image-gallery-next');"
+                  class="absolute right-0 flex items-center justify-center text-white -translate-x-10 rounded-full cursor-pointer xl:translate-x-24 2xl:translate-x-32 bg-white/10 w-14 h-14 hover:bg-white/20 transition-all backdrop-blur-sm border border-white/20"
+                >
+                  <svg
+                    class="w-6 h-6"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                    />
+                  </svg>
+                </button>
+
+                <!-- Close Button -->
+                <button
+                  @click="imageGalleryClose"
+                  class="absolute top-0 right-0 flex items-center justify-center text-white rounded-full cursor-pointer bg-white/10 w-12 h-12 hover:bg-white/20 transition-all backdrop-blur-sm border border-white/20 m-4"
+                >
+                  <svg
+                    class="w-6 h-6"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS BAR -->
+    <section class="py-16 bg-white border-y border-gray-200">
+      <div
+        class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
+      >
+        <div>
+          <h3 class="text-4xl font-black gradient-text">500+</h3>
+          <p class="text-gray-500 text-sm mt-1">Projects Completed</p>
+        </div>
+        <div>
+          <h3 class="text-4xl font-black gradient-text">50+</h3>
+          <p class="text-gray-500 text-sm mt-1">Industries Served</p>
+        </div>
+        <div>
+          <h3 class="text-4xl font-black gradient-text">200+</h3>
+          <p class="text-gray-500 text-sm mt-1">Happy Clients</p>
+        </div>
+        <div>
+          <h3 class="text-4xl font-black gradient-text">4.9★</h3>
+          <p class="text-gray-500 text-sm mt-1">Average Rating</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section
+      class="relative py-24 bg-gradient-to-br from-primary via-accent to-primary overflow-hidden"
+    >
+      <div class="absolute inset-0 opacity-10">
+        <div
+          class="absolute top-10 left-10 w-64 h-64 bg-white rounded-full blur-3xl"
+        ></div>
+        <div
+          class="absolute bottom-10 right-10 w-80 h-80 bg-white rounded-full blur-3xl"
+        ></div>
+      </div>
+      <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+        <span
+          class="inline-block bg-white/20 backdrop-blur-sm text-white px-5 py-2 rounded-full text-xs font-bold mb-4 border border-white/30"
+          >Ready to Start?</span
+        >
+        <h2
+          class="text-4xl md:text-5xl font-black text-white mb-5 leading-tight"
+        >
+          Love What You See?
+        </h2>
+        <p
+          class="text-orange-100 mb-10 text-lg max-w-2xl mx-auto leading-relaxed"
+        >
+          Let's create something just as amazing for your brand. Get in touch
+          and let's bring your vision to life.
+        </p>
+        <div
+          class="flex flex-col sm:flex-row gap-4 justify-center items-center"
+        >
+          <a
+            href="contact.html"
+            class="bg-white text-primary px-8 py-4 rounded-full font-bold text-sm hover:bg-gray-100 transition-all shadow-2xl inline-flex items-center gap-2"
+            >Start Your Project <i class="fas fa-arrow-right"></i
+          ></a>
+          <a
+            href="services.html"
+            class="bg-white/10 backdrop-blur-sm border-2 border-white text-white px-8 py-4 rounded-full font-bold text-sm hover:bg-white/20 transition-all inline-flex items-center gap-2"
+            >View Services <i class="fas fa-briefcase"></i
+          ></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer
+      class="bg-[#0d0d14] text-white"
+      style="border-top: 3px solid #ff671f"
+    >
+      <div
+        class="w-full overflow-hidden"
+        style="line-height: 0; margin-top: -1px"
+      >
+        <svg
+          viewBox="0 0 1440 70"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+          style="display: block; width: 100%; height: 70px"
+        >
+          <path
+            d="M0,55 C200,10 500,0 720,15 C940,30 1200,60 1440,40 L1440,70 L0,70 Z"
+            fill="#0d0d14"
+          />
+        </svg>
+      </div>
+      <div class="max-w-7xl mx-auto px-6 pb-16 grid md:grid-cols-4 gap-10">
+        <div>
+          <a href="index.html" class="text-2xl font-black tracking-tight"
+            >PA<span class="gradient-text">Graphics</span></a
+          >
+          <p
+            class="text-primary text-xs font-semibold uppercase tracking-widest mt-1"
+          >
+            Creative Studio
+          </p>
+          <p class="text-gray-500 text-sm mt-4 leading-relaxed">
+            Crafting visual stories that inspire, transform, and leave a lasting
+            impression.
+          </p>
+          <div class="flex gap-3 mt-6">
+            <a
+              href="#"
+              class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-primary hover:border-primary hover:text-white transition"
+              ><i class="fab fa-instagram text-xs"></i
+            ></a>
+            <a
+              href="#"
+              class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-primary hover:border-primary hover:text-white transition"
+              ><i class="fab fa-facebook text-xs"></i
+            ></a>
+            <a
+              href="#"
+              class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-primary hover:border-primary hover:text-white transition"
+              ><i class="fab fa-youtube text-xs"></i
+            ></a>
+            <a
+              href="#"
+              class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-primary hover:border-primary hover:text-white transition"
+              ><i class="fab fa-behance text-xs"></i
+            ></a>
+          </div>
+        </div>
+        <div>
+          <h4
+            class="font-bold text-xs uppercase tracking-widest text-primary mb-5"
+          >
+            Services
+          </h4>
+          <ul class="space-y-3 text-sm">
+            <li>
+              <a
+                href="services.html"
+                class="flex items-center gap-2 text-gray-400 hover:text-white transition group"
+                ><span class="text-primary group-hover:text-white">›</span>
+                Graphic Design</a
+              >
+            </li>
+            <li>
+              <a
+                href="services.html"
+                class="flex items-center gap-2 text-gray-400 hover:text-white transition group"
+                ><span class="text-primary group-hover:text-white">›</span>
+                Motion Graphics</a
+              >
+            </li>
+            <li>
+              <a
+                href="services.html"
+                class="flex items-center gap-2 text-gray-400 hover:text-white transition group"
+                ><span class="text-primary group-hover:text-white">›</span>
+                Church Media</a
+              >
+            </li>
+            <li>
+              <a
+                href="services.html"
+                class="flex items-center gap-2 text-gray-400 hover:text-white transition group"
+                ><span class="text-primary group-hover:text-white">›</span> Web
+                Design</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4
+            class="font-bold text-xs uppercase tracking-widest text-primary mb-5"
+          >
+            Company
+          </h4>
+          <ul class="space-y-3 text-sm">
+            <li>
+              <a
+                href="about.html"
+                class="flex items-center gap-2 text-gray-400 hover:text-white transition group"
+                ><span class="text-primary group-hover:text-white">›</span>
+                About Us</a
+              >
+            </li>
+            <li>
+              <a
+                href="portfolio.html"
+                class="flex items-center gap-2 text-gray-400 hover:text-white transition group"
+                ><span class="text-primary group-hover:text-white">›</span>
+                Portfolio</a
+              >
+            </li>
+            <li>
+              <a
+                href="contact.html"
+                class="flex items-center gap-2 text-gray-400 hover:text-white transition group"
+                ><span class="text-primary group-hover:text-white">›</span>
+                Contact</a
+              >
+            </li>
+            <li>
+              <a
+                href="../index.php?page=login"
+                class="flex items-center gap-2 text-gray-400 hover:text-white transition group"
+                ><span class="text-primary group-hover:text-white">›</span>
+                Admin Login</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4
+            class="font-bold text-xs uppercase tracking-widest text-primary mb-5"
+          >
+            Contact
+          </h4>
+          <ul class="space-y-4 text-sm">
+            <li class="flex items-center gap-3 text-gray-400">
+              <span
+                class="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0"
+                ><i class="fas fa-phone text-primary text-xs"></i
+              ></span>
+              +91 98765 43210
+            </li>
+            <li class="flex items-center gap-3 text-gray-400">
+              <span
+                class="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0"
+                ><i class="fas fa-envelope text-primary text-xs"></i
+              ></span>
+              hello@pagraphics.com
+            </li>
+            <li class="flex items-center gap-3 text-gray-400">
+              <span
+                class="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0"
+                ><i class="fas fa-map-marker-alt text-primary text-xs"></i
+              ></span>
+              Maharashtra, India
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="border-t border-white/5 py-5 px-6 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-gray-600 text-xs"
+      >
+        <p>
+          &copy; 2025 <span class="text-gray-400 font-medium">PAGraphics</span>.
+          All rights reserved.
+        </p>
+        <p class="mt-2 md:mt-0">
+          Designed by
+          <span class="text-primary font-semibold"
+            >WebCultivate Software Solutions</span
+          >
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("hamburger").addEventListener("click", () => {
+        document.getElementById("mobileMenu").classList.toggle("hidden");
       });
-    });
-  </script>
-</body>
+    </script>
+  </body>
 </html>

@@ -1,6 +1,0 @@
-Based on the AuthController.php I created:
-
-Email: admin@patridesigns.com
-
-Password: patricia2025
-
