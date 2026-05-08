@@ -23,6 +23,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <link rel="stylesheet" href="animations.css" />
     <style>
       html {
         scroll-behavior: smooth;
@@ -290,514 +291,334 @@
 
     <!-- PAGE HERO -->
     <section
-      class="hero-section relative bg-gradient-to-br from-gray-900 via-black to-gray-900 overflow-hidden flex items-center"
+      class="relative min-h-screen bg-black overflow-hidden flex items-center"
     >
-      <!-- Animated Background Elements -->
-      <div class="absolute inset-0">
-        <div
-          class="absolute top-20 left-10 w-64 h-64 md:w-96 md:h-96 bg-[#F0C03A]/10 rounded-full blur-3xl animate-pulse"
-        ></div>
-        <div
-          class="absolute bottom-20 right-10 w-48 h-48 md:w-80 md:h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse"
-          style="animation-delay: 1.5s"
-        ></div>
-        <div
-          class="absolute top-1/2 left-1/3 w-40 h-40 md:w-72 md:h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse"
-          style="animation-delay: 3s"
-        ></div>
-      </div>
-
-      <!-- Grid Pattern Overlay -->
+      <!-- Background Glow -->
       <div
-        class="absolute inset-0 opacity-[0.02]"
-        style="
-          background-image:
-            linear-gradient(#f0c03a 1px, transparent 1px),
-            linear-gradient(90deg, #f0c03a 1px, transparent 1px);
-          background-size: 50px 50px;
-        "
+        class="absolute top-0 left-0 w-[400px] h-[400px] bg-[#C89B2D]/10 rounded-full blur-3xl"
       ></div>
 
       <div
-        class="max-w-7xl mx-auto px-4 md:px-6 relative z-10 w-full py-8 md:py-0"
-      >
-        <div class="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
+        class="absolute bottom-0 right-0 w-[350px] h-[350px] bg-[#C89B2D]/5 rounded-full blur-3xl"
+      ></div>
+
+      <!-- Container -->
+      <div class="max-w-7xl mx-auto px-6 py-20 relative z-10 w-full">
+        <div class="grid lg:grid-cols-12 gap-14 items-center">
           <!-- Left Content -->
-          <div
-            class="text-left opacity-0 animate-slideInLeft order-2 lg:order-1"
-          >
-            <!-- Badge -->
-            <div
-              class="inline-flex items-center gap-2 bg-[#F0C03A]/10 backdrop-blur-sm border border-[#F0C03A]/30 text-[#F0C03A] px-3 py-1.5 md:px-4 md:py-2 rounded-full text-[10px] md:text-xs font-bold tracking-wider uppercase mb-3 md:mb-4"
-            >
-              <span class="relative flex h-2 w-2">
-                <span
-                  class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#F0C03A] opacity-75"
-                ></span>
-                <span
-                  class="relative inline-flex rounded-full h-2 w-2 bg-[#F0C03A]"
-                ></span>
-              </span>
-              About PAGraphics
+          <div class="lg:col-span-6">
+            <!-- Label -->
+            <div class="fade-up flex items-center gap-4 mb-6">
+              <div class="w-10 h-[1px] bg-[#C89B2D]"></div>
+
+              <p
+                class="text-[#C89B2D] uppercase tracking-[4px] text-xs font-semibold"
+              >
+                About PA Graphics
+              </p>
             </div>
 
-            <!-- Main Heading -->
+            <!-- Heading -->
             <h1
-              class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-3 md:mb-4 leading-[1.1]"
+              class="fade-up stagger-1 text-4xl md:text-6xl font-black text-white leading-[1.02] tracking-[-2px] mb-6 max-w-4xl"
             >
-              Where
-              <span
-                class="block mt-1 text-transparent bg-clip-text bg-gradient-to-r from-[#F0C03A] via-yellow-300 to-[#F0C03A] animate-pulse"
-              >
-                Creativity
-              </span>
-              <span class="block mt-1">Meets Innovation</span>
+              Independent Creative Designer crafting
+              <span class="text-[#C89B2D]"> modern visual identities. </span>
             </h1>
 
             <!-- Description -->
-            <p
-              class="text-sm md:text-base lg:text-lg text-gray-400 mb-4 md:mb-6 leading-relaxed"
-            >
-              We transform ideas into stunning visual experiences. From bold
-              branding to captivating motion graphics, we craft designs that
-              inspire.
+            <p class="fade-up stagger-2 text-gray-400 text-lg leading-relaxed max-w-xl mb-10">
+              Helping modern brands grow through thoughtful branding, digital
+              design, and creative direction.
             </p>
 
-            <!-- Stats Row -->
-            <div class="grid grid-cols-3 gap-3 md:gap-4 mb-4 md:mb-6">
-              <div
-                class="text-center lg:text-left opacity-0 animate-fadeInUp delay-200"
-              >
-                <div
-                  class="text-2xl sm:text-3xl md:text-4xl font-black text-[#F0C03A] mb-1"
-                >
-                  500+
-                </div>
-                <div class="text-[10px] md:text-xs text-gray-500 font-medium">
-                  Projects
-                </div>
-              </div>
-              <div
-                class="text-center lg:text-left opacity-0 animate-fadeInUp delay-300"
-              >
-                <div
-                  class="text-2xl sm:text-3xl md:text-4xl font-black text-[#F0C03A] mb-1"
-                >
-                  200+
-                </div>
-                <div class="text-[10px] md:text-xs text-gray-500 font-medium">
-                  Clients
-                </div>
-              </div>
-              <div
-                class="text-center lg:text-left opacity-0 animate-fadeInUp delay-400"
-              >
-                <div
-                  class="text-2xl sm:text-3xl md:text-4xl font-black text-[#F0C03A] mb-1"
-                >
-                  8+
-                </div>
-                <div class="text-[10px] md:text-xs text-gray-500 font-medium">
-                  Years
-                </div>
-              </div>
-            </div>
-
-            <!-- CTA Buttons -->
-            <div
-              class="flex flex-row gap-2 md:gap-3 opacity-0 animate-fadeInUp delay-500"
-            >
+            <!-- Buttons -->
+            <div class="fade-up stagger-3 flex flex-col sm:flex-row gap-4">
+              <!-- Primary -->
               <a
                 href="contact.html"
-                class="group relative px-4 py-2.5 md:px-6 md:py-3 bg-[#F0C03A] text-black font-bold rounded-xl overflow-hidden transition-all hover:scale-105 hover:shadow-2xl hover:shadow-[#F0C03A]/50 flex items-center justify-center gap-2 text-xs md:text-sm flex-1 sm:flex-initial"
+                class="group inline-flex items-center justify-center gap-3 bg-[#C89B2D] text-black px-7 py-3.5 rounded-full font-bold hover:scale-[1.02] transition duration-300"
               >
-                <span class="relative z-10">Start Project</span>
+                Start Project
+
                 <i
-                  class="fas fa-arrow-right relative z-10 group-hover:translate-x-1 transition-transform text-xs"
+                  class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"
                 ></i>
               </a>
+
+              <!-- Secondary -->
               <a
                 href="portfolio.html"
-                class="px-4 py-2.5 md:px-6 md:py-3 border-2 border-[#F0C03A] text-[#F0C03A] font-bold rounded-xl hover:bg-[#F0C03A]/10 transition-all flex items-center justify-center gap-2 text-xs md:text-sm flex-1 sm:flex-initial"
+                class="inline-flex items-center justify-center gap-3 border border-white/10 text-white px-7 py-3.5 rounded-full font-semibold hover:bg-white/5 transition duration-300"
               >
-                <i class="fas fa-images text-xs"></i>
-                <span>Portfolio</span>
+                View Work
               </a>
             </div>
           </div>
 
-          <!-- Right Visual Content -->
-          <div
-            class="relative opacity-0 animate-slideInRight delay-200 order-1 lg:order-2"
-          >
-            <!-- Main Image Container -->
-            <div class="relative">
-              <!-- Floating Design Elements -->
-              <div
-                class="absolute -top-4 -left-4 md:-top-6 md:-left-6 w-16 h-16 md:w-24 md:h-24 bg-gradient-to-br from-[#F0C03A] to-yellow-600 rounded-2xl md:rounded-3xl rotate-12 opacity-80 shadow-2xl shadow-[#F0C03A]/50 animate-float"
-              ></div>
-              <div
-                class="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 w-20 h-20 md:w-32 md:h-32 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full opacity-70 shadow-2xl shadow-purple-500/50 animate-floatReverse"
-              ></div>
+          <!-- Right Visual Layout -->
+          <div class="lg:col-span-6 mt-30 lg:mt-5">
+            <div class="fade-left stagger-2 grid grid-cols-2 gap-5">
+              <!-- Large Image -->
+              <div class="col-span-2 relative overflow-hidden rounded-[32px]">
+                <img
+                  src="public/Hero1.jpg"
+                  alt="Creative Workspace"
+                  class="w-full h-[320px] object-cover hover:scale-105 transition duration-700"
+                />
 
-              <!-- Central Image/Graphic -->
-              <div
-                class="relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl md:rounded-3xl p-4 md:p-6 border border-gray-700 shadow-2xl overflow-hidden"
-              >
-                <!-- Background Pattern -->
-                <div class="absolute inset-0 opacity-5">
-                  <svg width="100%" height="100%">
-                    <pattern
-                      id="dots"
-                      x="0"
-                      y="0"
-                      width="20"
-                      height="20"
-                      patternUnits="userSpaceOnUse"
-                    >
-                      <circle cx="2" cy="2" r="1" fill="#F0C03A" />
-                    </pattern>
-                    <rect width="100%" height="100%" fill="url(#dots)" />
-                  </svg>
-                </div>
+                <!-- Overlay -->
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"
+                ></div>
 
-                <!-- Design Tools Illustration -->
-                <div class="relative z-10 space-y-3 md:space-y-4">
-                  <!-- Color Palette -->
-                  <div
-                    class="flex gap-1.5 md:gap-2 justify-center opacity-0 animate-scaleIn delay-400"
+                <!-- Card -->
+                <div
+                  class="absolute bottom-5 left-5 bg-black/60 backdrop-blur-xl border border-white/10 rounded-[22px] px-5 py-4"
+                >
+                  <p
+                    class="text-[#C89B2D] uppercase tracking-[3px] text-[10px] font-semibold mb-1"
                   >
-                    <div
-                      class="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-gradient-to-br from-[#F0C03A] to-yellow-600 shadow-lg transform hover:scale-110 transition-transform"
-                    ></div>
-                    <div
-                      class="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 shadow-lg transform hover:scale-110 transition-transform"
-                    ></div>
-                    <div
-                      class="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-gradient-to-br from-blue-500 to-cyan-400 shadow-lg transform hover:scale-110 transition-transform"
-                    ></div>
-                    <div
-                      class="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-gradient-to-br from-green-500 to-teal-400 shadow-lg transform hover:scale-110 transition-transform"
-                    ></div>
-                  </div>
+                    Creative Studio
+                  </p>
 
-                  <!-- Design Icons Grid -->
-                  <div
-                    class="grid grid-cols-3 gap-2 md:gap-3 py-3 md:py-4 opacity-0 animate-fadeIn delay-500"
-                  >
-                    <div
-                      class="bg-gray-800/50 backdrop-blur-sm rounded-lg md:rounded-xl p-3 md:p-4 flex items-center justify-center border border-gray-700 hover:border-[#F0C03A] transition-all group"
-                    >
-                      <i
-                        class="fas fa-pen-nib text-xl md:text-2xl text-[#F0C03A] group-hover:scale-110 transition-transform"
-                      ></i>
-                    </div>
-                    <div
-                      class="bg-gray-800/50 backdrop-blur-sm rounded-lg md:rounded-xl p-3 md:p-4 flex items-center justify-center border border-gray-700 hover:border-purple-500 transition-all group"
-                    >
-                      <i
-                        class="fas fa-palette text-xl md:text-2xl text-purple-500 group-hover:scale-110 transition-transform"
-                      ></i>
-                    </div>
-                    <div
-                      class="bg-gray-800/50 backdrop-blur-sm rounded-lg md:rounded-xl p-3 md:p-4 flex items-center justify-center border border-gray-700 hover:border-blue-500 transition-all group"
-                    >
-                      <i
-                        class="fas fa-layer-group text-xl md:text-2xl text-blue-500 group-hover:scale-110 transition-transform"
-                      ></i>
-                    </div>
-                    <div
-                      class="bg-gray-800/50 backdrop-blur-sm rounded-lg md:rounded-xl p-3 md:p-4 flex items-center justify-center border border-gray-700 hover:border-green-500 transition-all group"
-                    >
-                      <i
-                        class="fas fa-vector-square text-xl md:text-2xl text-green-500 group-hover:scale-110 transition-transform"
-                      ></i>
-                    </div>
-                    <div
-                      class="bg-gray-800/50 backdrop-blur-sm rounded-lg md:rounded-xl p-3 md:p-4 flex items-center justify-center border border-gray-700 hover:border-pink-500 transition-all group"
-                    >
-                      <i
-                        class="fas fa-bezier-curve text-xl md:text-2xl text-pink-500 group-hover:scale-110 transition-transform"
-                      ></i>
-                    </div>
-                    <div
-                      class="bg-gray-800/50 backdrop-blur-sm rounded-lg md:rounded-xl p-3 md:p-4 flex items-center justify-center border border-gray-700 hover:border-cyan-500 transition-all group"
-                    >
-                      <i
-                        class="fas fa-magic text-xl md:text-2xl text-cyan-500 group-hover:scale-110 transition-transform"
-                      ></i>
-                    </div>
-                  </div>
-
-                  <!-- Typography Sample -->
-                  <div
-                    class="text-center space-y-1.5 md:space-y-2 opacity-0 animate-scaleIn delay-600"
-                  >
-                    <div
-                      class="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#F0C03A] via-purple-500 to-blue-500"
-                    >
-                      Aa
-                    </div>
-                    <div class="flex gap-1.5 md:gap-2 justify-center">
-                      <div
-                        class="h-0.5 md:h-1 w-8 md:w-10 bg-[#F0C03A] rounded-full"
-                      ></div>
-                      <div
-                        class="h-0.5 md:h-1 w-5 md:w-6 bg-purple-500 rounded-full"
-                      ></div>
-                      <div
-                        class="h-0.5 md:h-1 w-10 md:w-12 bg-blue-500 rounded-full"
-                      ></div>
-                    </div>
-                  </div>
+                  <h3 class="text-white text-lg font-black">
+                    Modern Brand Identity
+                  </h3>
                 </div>
               </div>
 
-              <!-- Floating Badge - Hidden on small mobile -->
-              <div
-                class="hidden sm:flex absolute -bottom-6 md:-bottom-8 left-1/2 transform -translate-x-1/2 bg-white rounded-lg md:rounded-xl shadow-2xl p-2 md:p-3 border border-gray-100 items-center gap-2 opacity-0 animate-fadeInUp delay-700"
-              >
-                <div class="flex text-yellow-400 text-[10px] md:text-xs">
-                  ★★★★★
-                </div>
-                <div>
-                  <p class="text-gray-800 font-bold text-[10px] md:text-xs">
-                    4.9/5 Rating
-                  </p>
-                  <p class="text-gray-400 text-[8px] md:text-[10px]">
-                    200+ Clients
-                  </p>
-                </div>
+              <!-- Small Image -->
+              <div class="relative overflow-hidden rounded-[28px]">
+                <img
+                  src="public/Hero2.jpg"
+                  alt="Creative Meeting"
+                  class="w-full h-[220px] object-cover hover:scale-105 transition duration-700"
+                />
+
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"
+                ></div>
+              </div>
+
+              <!-- Small Image -->
+              <div class="relative overflow-hidden rounded-[28px]">
+                <img
+                  src="public/Hero3.png"
+                  alt="Design Process"
+                  class="w-full h-[220px] object-cover hover:scale-105 transition duration-700"
+                />
+
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"
+                ></div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-
-      <!-- Scroll Indicator - Hidden on mobile -->
-      <div
-        class="hidden md:block absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce opacity-0 animate-fadeIn delay-700"
-      >
-        <div
-          class="w-5 h-8 border-2 border-[#F0C03A]/50 rounded-full flex items-start justify-center p-1"
-        >
-          <div class="w-1 h-2 bg-[#F0C03A] rounded-full animate-pulse"></div>
         </div>
       </div>
     </section>
 
     <!-- STORY -->
-    <section
-      class="py-12 md:py-16 bg-gradient-to-br from-gray-50 via-white to-yellow-50 relative overflow-hidden"
-    >
-      <!-- Decorative Background Elements -->
+    <section class="bg-white py-32 overflow-hidden relative">
+      <!-- Soft Background Accent -->
       <div
-        class="absolute top-0 right-0 w-96 h-96 bg-yellow-100 rounded-full blur-3xl opacity-30"
-      ></div>
-      <div
-        class="absolute bottom-0 left-0 w-80 h-80 bg-purple-100 rounded-full blur-3xl opacity-20"
+        class="absolute top-0 right-0 w-[500px] h-[500px] bg-[#C89B2D]/5 rounded-full blur-3xl"
       ></div>
 
-      <div class="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
-        <div class="grid lg:grid-cols-2 gap-6 md:gap-12 items-center">
-          <!-- Left: Content -->
-          <div class="order-2 lg:order-1 opacity-0 animate-slideInLeft">
-            <!-- Badge -->
-            <div
-              class="inline-flex items-center gap-2 bg-[#F0C03A]/10 border-2 border-[#F0C03A]/30 text-[#F0C03A] px-3 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase mb-3"
-            >
-              <i class="fas fa-book-open text-xs"></i>
-              Our Story
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="grid lg:grid-cols-12 gap-16 items-center">
+          <!-- Left Image -->
+          <div class="scale-in lg:col-span-5 relative flex justify-center">
+            <!-- Main Image Container -->
+            <div class="relative max-w-[380px] w-full">
+              <!-- Background Shape -->
+              <div
+                class="absolute inset-0 bg-[#C89B2D]/10 rounded-[40px] rotate-[-6deg]"
+              ></div>
+
+              <!-- Image -->
+              <div
+                class="relative bg-[#F8F8F8] rounded-[40px] overflow-hidden border border-gray-200"
+              >
+                <img
+                  src="./public/pa.png"
+                  alt="PA Graphics Founder"
+                  class="w-full h-[560px] object-cover"
+                />
+              </div>
+
+              <!-- Floating Badge -->
+              <div
+                class="absolute -bottom-5 -right-5 bg-black text-white rounded-[24px] px-6 py-5 shadow-2xl"
+              >
+                <p
+                  class="text-[#C89B2D] uppercase tracking-[3px] text-[10px] font-semibold mb-2"
+                >
+                  Independent Studio
+                </p>
+
+                <h3 class="text-xl font-black">PA Graphics</h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Content -->
+          <div class="lg:col-span-7">
+            <!-- Small Label -->
+            <div class="fade-up flex items-center gap-4 mb-8">
+              <div class="w-12 h-[1px] bg-[#C89B2D]"></div>
+
+              <p
+                class="text-[#C89B2D] uppercase tracking-[5px] text-xs font-semibold"
+              >
+                About The Studio
+              </p>
             </div>
 
             <!-- Heading -->
             <h2
-              class="text-2xl md:text-3xl lg:text-4xl font-black text-gray-900 mb-3 leading-tight"
+              class="fade-up stagger-1 text-4xl md:text-6xl font-black text-[#111111] leading-[1.05] tracking-[-2px] mb-8"
             >
-              Born From a
-              <span class="relative inline-block">
-                <span
-                  class="text-transparent bg-clip-text bg-gradient-to-r from-[#F0C03A] to-yellow-600"
-                  >Love of Design</span
-                >
-                <svg
-                  class="absolute -bottom-1 left-0 w-full"
-                  height="6"
-                  viewBox="0 0 200 6"
-                  fill="none"
-                >
-                  <path
-                    d="M2 4C50 2 100 1 150 3C180 4 195 4 198 4"
-                    stroke="#F0C03A"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                  />
-                </svg>
-              </span>
+              Creating thoughtful
+              <span class="text-[#C89B2D]"> visual experiences </span>
+              with a modern and strategic design approach.
             </h2>
 
             <!-- Description -->
-            <div class="space-y-3 mb-5">
-              <p class="text-gray-600 leading-relaxed text-sm">
-                PAGraphics was founded with a simple belief — that every
-                organization, no matter the size, deserves world-class design.
-                What started as a one-person studio continues to deliver
-                exceptional creative solutions to clients across the globe.
+            <div class="fade-up stagger-2 space-y-6">
+              <p class="text-gray-600 text-lg leading-relaxed">
+                PA Graphics is an independent creative studio focused on
+                branding, visual identity, and digital experiences crafted for
+                modern businesses.
               </p>
-              <p class="text-gray-600 leading-relaxed text-sm">
-                I specialize in serving churches, ministries, and faith-based
-                organizations, but my work spans across industries. My mission
-                is to tell your story visually — with clarity, beauty, and
-                impact.
+
+              <p class="text-gray-600 text-lg leading-relaxed">
+                Every project is approached with attention to detail, clarity,
+                and a strong visual direction designed to help brands
+                communicate with confidence.
               </p>
             </div>
 
-            <!-- Feature List -->
-            <div class="space-y-2 mb-5">
-              <div class="flex items-center gap-2 group">
-                <div
-                  class="w-7 h-7 rounded-lg bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform"
-                >
-                  <i class="fas fa-check text-white text-xs"></i>
-                </div>
-                <p class="text-gray-700 font-medium text-xs md:text-sm">
-                  Global client base across 20+ countries
+            <!-- Stats -->
+            <div
+              class="fade-up stagger-3 grid grid-cols-3 gap-8 mt-14 pt-10 border-t border-gray-200"
+            >
+              <div>
+                <h3 class="text-4xl font-black text-[#111111] mb-2">250+</h3>
+
+                <p class="text-gray-500 uppercase tracking-[2px] text-xs">
+                  Projects
                 </p>
               </div>
-              <div class="flex items-center gap-2 group">
-                <div
-                  class="w-7 h-7 rounded-lg bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform"
-                >
-                  <i class="fas fa-check text-white text-xs"></i>
-                </div>
-                <p class="text-gray-700 font-medium text-xs md:text-sm">
-                  Specialized in faith-based design solutions
+
+              <div>
+                <h3 class="text-4xl font-black text-[#111111] mb-2">12+</h3>
+
+                <p class="text-gray-500 uppercase tracking-[2px] text-xs">
+                  Countries
                 </p>
               </div>
-              <div class="flex items-center gap-2 group">
-                <div
-                  class="w-7 h-7 rounded-lg bg-gradient-to-br from-pink-400 to-rose-500 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform"
-                >
-                  <i class="fas fa-check text-white text-xs"></i>
-                </div>
-                <p class="text-gray-700 font-medium text-xs md:text-sm">
-                  Award-winning creative work
+
+              <div>
+                <h3 class="text-4xl font-black text-[#111111] mb-2">98%</h3>
+
+                <p class="text-gray-500 uppercase tracking-[2px] text-xs">
+                  Satisfaction
                 </p>
               </div>
-            </div>
-
-            <!-- CTA Button -->
-            <div class="mt-6">
-              <a
-                href="portfolio.html"
-                class="inline-flex items-center gap-2 bg-gradient-to-r from-[#F0C03A] to-yellow-500 text-black px-5 py-2.5 rounded-xl font-bold text-xs md:text-sm hover:shadow-2xl hover:scale-105 transition-all duration-300 group"
-              >
-                <span>View My Work</span>
-                <i
-                  class="fas fa-arrow-right group-hover:translate-x-1 transition-transform text-xs"
-                ></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- Right: Founder Image -->
-          <div
-            class="relative order-1 lg:order-2 opacity-0 animate-slideInRight delay-200"
-          >
-            <div class="relative max-w-md mx-auto -mt-8 md:-mt-12">
-              <!-- Main Founder Image - PNG with transparency -->
-              <div class="relative">
-                <img
-                  src="public/pa.png"
-                  alt="Patricia Afonso - Founder"
-                  class="w-full h-auto object-contain drop-shadow-2xl"
-                />
-              </div>
-
-              <!-- Decorative Floating Element - Bottom Left Only -->
-              <div
-                class="absolute bottom-20 -left-4 w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-purple-400 to-pink-400 shadow-xl animate-floatReverse opacity-70 -z-10"
-              ></div>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- Floating Decorative Elements -->
-      <div
-        class="absolute top-20 left-10 w-20 h-20 rounded-full bg-yellow-200 opacity-20 animate-float"
-      ></div>
-      <div
-        class="absolute bottom-32 right-20 w-16 h-16 rounded-full bg-purple-200 opacity-20 animate-floatReverse"
-      ></div>
     </section>
 
-    <!-- VALUES -->
-    <section class="py-24 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-16">
-          <span
-            class="bg-yellow-100 text-primary px-4 py-1.5 rounded-full text-xs font-semibold"
-            >Our Values</span
-          >
-          <h2 class="text-4xl font-black text-gray-900 mt-4 mb-3">
-            What <span class="gradient-text">Drives Us</span>
-          </h2>
-          <p class="text-gray-500 max-w-xl mx-auto">
-            The principles that guide every project we take on.
-          </p>
+    <!-- Philosophy -->
+    <section class="bg-[#0A0A0A] py-32 overflow-hidden relative">
+      <!-- Background Glow -->
+      <div
+        class="absolute top-0 left-0 w-[500px] h-[500px] bg-[#C89B2D]/10 rounded-full blur-3xl"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <!-- Heading -->
+        <div class="grid lg:grid-cols-12 gap-10 items-end mb-24">
+          <!-- Left -->
+          <div class="lg:col-span-4">
+            <p
+              class="fade-left text-[#C89B2D] uppercase tracking-[4px] text-xs font-semibold mb-5"
+            >
+              Creative Philosophy
+            </p>
+
+            <p class="fade-left stagger-1 text-gray-400 text-lg leading-relaxed max-w-sm">
+              A thoughtful approach focused on clarity, aesthetics, and modern
+              visual storytelling.
+            </p>
+          </div>
+
+          <!-- Right -->
+          <div class="lg:col-span-8">
+            <h2
+              class="fade-right text-4xl md:text-6xl font-black text-white leading-[1.05] lg:text-right"
+            >
+              Design should feel
+              <span class="text-[#C89B2D]"> intentional, </span>
+              timeless, and emotionally connected.
+            </h2>
+          </div>
         </div>
-        <div class="grid md:grid-cols-4 gap-6">
+
+        <!-- Modern Grid -->
+        <div class="grid lg:grid-cols-3 gap-6">
+          <!-- Card -->
           <div
-            class="bg-white rounded-2xl p-7 text-center card-hover border border-gray-100"
+            class="fade-up stagger-1 group bg-white/[0.03] border border-white/10 rounded-[32px] p-8 backdrop-blur-xl hover:border-[#C89B2D]/40 transition duration-500"
           >
-            <div
-              class="w-14 h-14 bg-yellow-100 rounded-2xl flex items-center justify-center mx-auto mb-4"
-            >
-              <i class="fas fa-heart text-primary text-xl"></i>
-            </div>
-            <h3 class="font-bold text-gray-900 mb-2">Passion</h3>
-            <p class="text-gray-500 text-sm leading-relaxed">
-              We love what we do and it shows in every design we create.
+            <!-- Number -->
+            <div class="text-6xl font-black text-[#C89B2D]/20 mb-10">01</div>
+
+            <!-- Title -->
+            <h3 class="text-3xl font-black text-white mb-5">Clarity</h3>
+
+            <!-- Text -->
+            <p class="text-gray-400 leading-relaxed text-lg">
+              Every visual element is designed with purpose, creating clean and
+              meaningful brand communication.
             </p>
           </div>
+
+          <!-- Card -->
           <div
-            class="bg-white rounded-2xl p-7 text-center card-hover border border-gray-100"
+            class="fade-up stagger-2 group bg-white/[0.03] border border-white/10 rounded-[32px] p-8 backdrop-blur-xl hover:border-[#C89B2D]/40 transition duration-500"
           >
-            <div
-              class="w-14 h-14 bg-yellow-100 rounded-2xl flex items-center justify-center mx-auto mb-4"
-            >
-              <i class="fas fa-gem text-primary text-xl"></i>
-            </div>
-            <h3 class="font-bold text-gray-900 mb-2">Excellence</h3>
-            <p class="text-gray-500 text-sm leading-relaxed">
-              We never settle for good enough. Every pixel matters to us.
+            <!-- Number -->
+            <div class="text-6xl font-black text-[#C89B2D]/20 mb-10">02</div>
+
+            <!-- Title -->
+            <h3 class="text-3xl font-black text-white mb-5">Strategy</h3>
+
+            <!-- Text -->
+            <p class="text-gray-400 leading-relaxed text-lg">
+              Design decisions are guided by thoughtful creative direction
+              aligned with modern business goals.
             </p>
           </div>
+
+          <!-- Card -->
           <div
-            class="bg-white rounded-2xl p-7 text-center card-hover border border-gray-100"
+            class="fade-up stagger-3 group bg-white/[0.03] border border-white/10 rounded-[32px] p-8 backdrop-blur-xl hover:border-[#C89B2D]/40 transition duration-500"
           >
-            <div
-              class="w-14 h-14 bg-yellow-100 rounded-2xl flex items-center justify-center mx-auto mb-4"
-            >
-              <i class="fas fa-handshake text-primary text-xl"></i>
-            </div>
-            <h3 class="font-bold text-gray-900 mb-2">Integrity</h3>
-            <p class="text-gray-500 text-sm leading-relaxed">
-              Honest communication and transparent processes, always.
-            </p>
-          </div>
-          <div
-            class="bg-white rounded-2xl p-7 text-center card-hover border border-gray-100"
-          >
-            <div
-              class="w-14 h-14 bg-yellow-100 rounded-2xl flex items-center justify-center mx-auto mb-4"
-            >
-              <i class="fas fa-lightbulb text-primary text-xl"></i>
-            </div>
-            <h3 class="font-bold text-gray-900 mb-2">Innovation</h3>
-            <p class="text-gray-500 text-sm leading-relaxed">
-              We stay ahead of trends to deliver fresh, modern designs.
+            <!-- Number -->
+            <div class="text-6xl font-black text-[#C89B2D]/20 mb-10">03</div>
+
+            <!-- Title -->
+            <h3 class="text-3xl font-black text-white mb-5">Identity</h3>
+
+            <!-- Text -->
+            <p class="text-gray-400 leading-relaxed text-lg">
+              Building visual systems that feel authentic, timeless, and
+              memorable across digital and physical platforms.
             </p>
           </div>
         </div>
@@ -805,184 +626,466 @@
     </section>
 
     <!-- TEAM -->
-    <section class="py-24 bg-white">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-16">
-          <span
-            class="bg-yellow-100 text-primary px-4 py-1.5 rounded-full text-xs font-semibold"
-            >The Team</span
+    <section class="bg-[#0A0A0A] py-32 overflow-hidden relative">
+      <!-- Background Glow -->
+      <div
+        class="absolute top-0 right-0 w-[500px] h-[500px] bg-[#C89B2D]/10 rounded-full blur-3xl"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <!-- Heading -->
+        <div class="mb-24 max-w-5xl">
+          <!-- Small Label -->
+          <div class="fade-up flex items-center gap-4 mb-8">
+            <div class="w-12 h-[1px] bg-[#C89B2D]"></div>
+
+            <p
+              class="text-[#C89B2D] uppercase tracking-[5px] text-xs font-semibold"
+            >
+              Creative Expertise
+            </p>
+          </div>
+
+          <!-- Main Heading -->
+          <h2
+            class="fade-up stagger-1 text-4xl md:text-6xl font-black text-white leading-[1.05] tracking-[-2px] mb-8"
           >
-          <h2 class="text-4xl font-black text-gray-900 mt-4 mb-3">
-            Meet the <span class="gradient-text">Creatives</span>
+            Combining strategy and
+            <span class="text-[#C89B2D]"> visual creativity </span>
+            to craft modern brand experiences.
           </h2>
-          <p class="text-gray-500">
-            The talented people behind every great design.
+
+          <!-- Description -->
+          <p class="fade-up stagger-2 text-gray-400 text-lg leading-relaxed max-w-2xl">
+            Focused on building thoughtful visual systems that help brands stand
+            out with clarity, consistency, and strong creative direction.
           </p>
         </div>
-        <div class="grid md:grid-cols-4 gap-6">
-          <div class="text-center card-hover group">
+
+        <!-- Expertise Layout -->
+        <div class="grid lg:grid-cols-12 gap-6">
+          <!-- Large Featured Card -->
+          <div
+            class="scale-in lg:col-span-7 relative overflow-hidden rounded-[40px] border border-white/10 bg-white/[0.03] p-10"
+          >
+            <!-- Background Pattern -->
             <div
-              class="w-full h-56 rounded-2xl bg-gradient-to-br from-yellow-400 to-yellow-500 flex items-center justify-center mb-4 overflow-hidden"
+              class="absolute inset-0 opacity-[0.03]"
+              style="
+                background-image:
+                  linear-gradient(#ffffff 1px, transparent 1px),
+                  linear-gradient(90deg, #ffffff 1px, transparent 1px);
+                background-size: 40px 40px;
+              "
+            ></div>
+
+            <!-- Icon -->
+            <div
+              class="relative z-10 w-16 h-16 rounded-2xl bg-[#C89B2D]/10 flex items-center justify-center text-[#C89B2D] text-2xl mb-10"
             >
-              <i class="fas fa-user text-white/30 text-6xl"></i>
+              <i class="fas fa-pen-nib"></i>
             </div>
-            <h3 class="font-bold text-gray-900">Patricia A.</h3>
-            <p class="text-primary text-sm font-medium">
-              Founder & Creative Director
-            </p>
+
+            <!-- Content -->
+            <div class="relative z-10">
+              <p
+                class="text-[#C89B2D] uppercase tracking-[3px] text-xs font-semibold mb-5"
+              >
+                Brand Identity
+              </p>
+
+              <h3
+                class="text-4xl md:text-5xl font-black text-white leading-tight mb-8 max-w-2xl"
+              >
+                Creating visual systems that feel timeless and memorable.
+              </h3>
+
+              <p class="text-gray-400 text-lg leading-relaxed max-w-2xl">
+                From logo systems to typography and digital assets, every
+                element is designed to create a premium and cohesive brand
+                experience.
+              </p>
+            </div>
           </div>
-          <div class="text-center card-hover group">
+
+          <!-- Right Side -->
+          <div class="lg:col-span-5 flex flex-col gap-6">
+            <!-- Card -->
             <div
-              class="w-full h-56 rounded-2xl bg-gradient-to-br from-blue-400 to-cyan-400 flex items-center justify-center mb-4 overflow-hidden"
+              class="fade-up stagger-2 border border-white/10 rounded-[32px] p-8 bg-white/[0.03] backdrop-blur-xl"
             >
-              <i class="fas fa-user text-white/30 text-6xl"></i>
+              <!-- Icon -->
+              <div
+                class="w-14 h-14 rounded-2xl bg-[#C89B2D]/10 flex items-center justify-center text-[#C89B2D] text-xl mb-8"
+              >
+                <i class="fas fa-layer-group"></i>
+              </div>
+
+              <!-- Content -->
+              <p
+                class="text-[#C89B2D] uppercase tracking-[3px] text-xs font-semibold mb-4"
+              >
+                Digital Design
+              </p>
+
+              <h3 class="text-3xl font-black text-white mb-5">
+                Modern Interfaces
+              </h3>
+
+              <p class="text-gray-400 leading-relaxed text-lg">
+                Creating clean digital experiences focused on clarity,
+                usability, and visual impact.
+              </p>
             </div>
-            <h3 class="font-bold text-gray-900">Marcus T.</h3>
-            <p class="text-primary text-sm font-medium">Motion Graphics Lead</p>
-          </div>
-          <div class="text-center card-hover group">
+
+            <!-- Card -->
             <div
-              class="w-full h-56 rounded-2xl bg-gradient-to-br from-green-400 to-teal-400 flex items-center justify-center mb-4 overflow-hidden"
+              class="fade-up stagger-3 border border-white/10 rounded-[32px] p-8 bg-white/[0.03] backdrop-blur-xl"
             >
-              <i class="fas fa-user text-white/30 text-6xl"></i>
+              <!-- Icon -->
+              <div
+                class="w-14 h-14 rounded-2xl bg-[#C89B2D]/10 flex items-center justify-center text-[#C89B2D] text-xl mb-8"
+              >
+                <i class="fas fa-box-open"></i>
+              </div>
+
+              <!-- Content -->
+              <p
+                class="text-[#C89B2D] uppercase tracking-[3px] text-xs font-semibold mb-4"
+              >
+                Packaging Design
+              </p>
+
+              <h3 class="text-3xl font-black text-white mb-5">
+                Premium Packaging
+              </h3>
+
+              <p class="text-gray-400 leading-relaxed text-lg">
+                Elegant packaging systems crafted to elevate product perception
+                and customer experience.
+              </p>
             </div>
-            <h3 class="font-bold text-gray-900">Lydia K.</h3>
-            <p class="text-primary text-sm font-medium">
-              Brand Identity Designer
-            </p>
-          </div>
-          <div class="text-center card-hover group">
-            <div
-              class="w-full h-56 rounded-2xl bg-gradient-to-br from-yellow-400 to-yellow-500 flex items-center justify-center mb-4 overflow-hidden"
-            >
-              <i class="fas fa-user text-white/30 text-6xl"></i>
-            </div>
-            <h3 class="font-bold text-gray-900">James O.</h3>
-            <p class="text-primary text-sm font-medium">Web Designer</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- WHY US -->
-    <section class="py-24 bg-gray-50">
+    <section class="bg-black py-32 overflow-hidden relative">
+      <!-- Background Accent -->
       <div
-        class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center"
-      >
-        <div>
-          <span
-            class="bg-yellow-100 text-primary px-4 py-1.5 rounded-full text-xs font-semibold"
-            >Why Choose Us</span
-          >
-          <h2 class="text-4xl font-black text-gray-900 mt-5 mb-5">
-            The <span class="gradient-text">PAGraphics</span> Difference
-          </h2>
-          <div class="space-y-4">
-            <div
-              class="flex items-start gap-4 bg-white rounded-2xl p-5 border border-gray-100"
-            >
-              <div
-                class="w-10 h-10 bg-yellow-100 rounded-xl flex items-center justify-center flex-shrink-0"
+        class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#C89B2D]/10 rounded-full blur-3xl"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <!-- Heading -->
+        <div class="grid lg:grid-cols-12 gap-10 items-end mb-24">
+          <!-- Left -->
+          <div class="lg:col-span-4">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-[1px] bg-[#C89B2D]"></div>
+
+              <p
+                class="text-[#C89B2D] uppercase tracking-[5px] text-xs font-semibold"
               >
-                <i class="fas fa-check text-primary text-sm"></i>
-              </div>
-              <div>
-                <h4 class="font-bold text-gray-900 text-sm mb-1">
-                  Faith-Driven Creative Team
-                </h4>
-                <p class="text-gray-500 text-sm">
-                  We understand the unique needs of churches and ministries.
-                </p>
-              </div>
+                Creative Environment
+              </p>
             </div>
-            <div
-              class="flex items-start gap-4 bg-white rounded-2xl p-5 border border-gray-100"
+
+            <p class="text-gray-400 text-lg leading-relaxed max-w-sm">
+              A modern workspace designed around creativity, clarity, and
+              thoughtful visual exploration.
+            </p>
+          </div>
+
+          <!-- Right -->
+          <div class="lg:col-span-8">
+            <h2
+              class="text-4xl md:text-6xl font-black text-white leading-[1.05] lg:text-right"
             >
-              <div
-                class="w-10 h-10 bg-yellow-100 rounded-xl flex items-center justify-center flex-shrink-0"
+              Every project begins with
+              <span class="text-[#C89B2D]"> research, experimentation, </span>
+              and a strong creative vision.
+            </h2>
+          </div>
+        </div>
+
+        <!-- Modern Bento Layout -->
+        <div class="grid lg:grid-cols-12 gap-6">
+          <!-- Large Workspace Image -->
+          <div class="creative-image creative-large lg:col-span-7 relative overflow-hidden rounded-[40px]">
+            <img
+              src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=2070&auto=format&fit=crop"
+              alt="Creative Workspace"
+              class="w-full h-[650px] object-cover hover:scale-105 transition duration-700"
+            />
+
+            <!-- Overlay -->
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"
+            ></div>
+
+            <!-- Content -->
+            <div class="absolute bottom-0 left-0 p-10">
+              <p
+                class="text-[#C89B2D] uppercase tracking-[3px] text-xs font-semibold mb-4"
               >
-                <i class="fas fa-bolt text-primary text-sm"></i>
-              </div>
-              <div>
-                <h4 class="font-bold text-gray-900 text-sm mb-1">
-                  Fast Turnaround
-                </h4>
-                <p class="text-gray-500 text-sm">
-                  Most projects delivered within 3–5 business days.
-                </p>
-              </div>
+                Creative Workspace
+              </p>
+
+              <h3 class="text-4xl font-black text-white mb-5">
+                Where ideas evolve into meaningful visual experiences.
+              </h3>
+
+              <p class="text-gray-300 text-lg leading-relaxed max-w-xl">
+                A focused creative environment built for strategy,
+                experimentation, and modern design thinking.
+              </p>
             </div>
+          </div>
+
+          <!-- Right Side -->
+          <div class="lg:col-span-5 flex flex-col gap-6">
+            <!-- Card -->
             <div
-              class="flex items-start gap-4 bg-white rounded-2xl p-5 border border-gray-100"
+              class="fade-up stagger-2 relative overflow-hidden rounded-[32px] border border-white/10 bg-white/[0.03] p-8"
             >
-              <div
-                class="w-10 h-10 bg-yellow-100 rounded-xl flex items-center justify-center flex-shrink-0"
-              >
-                <i class="fas fa-redo text-primary text-sm"></i>
-              </div>
-              <div>
-                <h4 class="font-bold text-gray-900 text-sm mb-1">
-                  Unlimited Revisions
-                </h4>
-                <p class="text-gray-500 text-sm">
-                  We work until you're 100% satisfied with the result.
-                </p>
-              </div>
+              <!-- Number -->
+              <div class="text-6xl font-black text-[#C89B2D]/20 mb-10">01</div>
+
+              <!-- Content -->
+              <h3 class="text-3xl font-black text-white mb-5">
+                Research Driven
+              </h3>
+
+              <p class="text-gray-400 leading-relaxed text-lg">
+                Every creative direction begins with understanding the brand,
+                audience, and visual positioning.
+              </p>
             </div>
+
+            <!-- Card -->
             <div
-              class="flex items-start gap-4 bg-white rounded-2xl p-5 border border-gray-100"
+              class="fade-up stagger-3 relative overflow-hidden rounded-[32px] border border-white/10 bg-white/[0.03] p-8"
             >
-              <div
-                class="w-10 h-10 bg-yellow-100 rounded-xl flex items-center justify-center flex-shrink-0"
-              >
-                <i class="fas fa-shield-alt text-primary text-sm"></i>
-              </div>
-              <div>
-                <h4 class="font-bold text-gray-900 text-sm mb-1">
-                  100% Satisfaction Guarantee
-                </h4>
-                <p class="text-gray-500 text-sm">
-                  Your satisfaction is our top priority, no questions asked.
-                </p>
-              </div>
+              <!-- Number -->
+              <div class="text-6xl font-black text-[#C89B2D]/20 mb-10">02</div>
+
+              <!-- Content -->
+              <h3 class="text-3xl font-black text-white mb-5">
+                Detail Focused
+              </h3>
+
+              <p class="text-gray-400 leading-relaxed text-lg">
+                Thoughtful typography, spacing, and visual systems crafted with
+                precision and consistency.
+              </p>
             </div>
           </div>
         </div>
-        <div class="grid grid-cols-2 gap-4">
-          <div class="bg-primary rounded-2xl p-7 text-white">
-            <h3 class="text-4xl font-black mb-1">500+</h3>
-            <p class="text-orange-100 text-sm">Projects Completed</p>
+      </div>
+    </section>
+
+    <!--Before CTA-->
+    <section class="bg-white py-32 overflow-hidden relative">
+      <!-- Soft Background Accent -->
+      <div
+        class="absolute top-0 right-0 w-[500px] h-[500px] bg-[#C89B2D]/5 rounded-full blur-3xl"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <!-- Heading -->
+        <div class="mb-24 max-w-5xl">
+          <!-- Small Label -->
+          <div class="fade-up flex items-center gap-4 mb-8">
+            <div class="w-12 h-[1px] bg-[#C89B2D]"></div>
+
+            <p
+              class="text-[#C89B2D] uppercase tracking-[5px] text-xs font-semibold"
+            >
+              Selected Achievements
+            </p>
           </div>
-          <div class="bg-white rounded-2xl p-7 border border-gray-100">
-            <h3 class="text-4xl font-black gradient-text mb-1">200+</h3>
-            <p class="text-gray-500 text-sm">Happy Clients</p>
+
+          <!-- Main Heading -->
+          <h2
+            class="fade-up stagger-1 text-4xl md:text-6xl font-black text-[#111111] leading-[1.05] tracking-[-2px] mb-8"
+          >
+            Building modern visual experiences with
+            <span class="text-[#C89B2D]"> creativity, consistency, </span>
+            and strategic design thinking.
+          </h2>
+
+          <!-- Description -->
+          <p class="fade-up stagger-2 text-gray-500 text-lg leading-relaxed max-w-2xl">
+            Focused on creating thoughtful branding systems and premium digital
+            experiences for modern businesses across different industries.
+          </p>
+        </div>
+
+        <!-- Achievement Cards -->
+        <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-6">
+          <!-- Card -->
+          <div
+            class="fade-up stagger-1 group border border-gray-200 rounded-[32px] p-10 bg-[#FAFAFA] hover:border-[#C89B2D]/40 transition duration-500"
+          >
+            <!-- Number -->
+            <h3 class="text-6xl font-black text-[#111111] mb-5 tracking-[-2px]">
+              250+
+            </h3>
+
+            <!-- Title -->
+            <p
+              class="text-[#C89B2D] uppercase tracking-[3px] text-xs font-semibold mb-4"
+            >
+              Projects Completed
+            </p>
+
+            <!-- Description -->
+            <p class="text-gray-500 leading-relaxed">
+              Creative projects crafted across branding, digital design, and
+              visual identity systems.
+            </p>
           </div>
-          <div class="bg-white rounded-2xl p-7 border border-gray-100">
-            <h3 class="text-4xl font-black gradient-text mb-1">8+</h3>
-            <p class="text-gray-500 text-sm">Years Experience</p>
+
+          <!-- Card -->
+          <div
+            class="fade-up stagger-2 group border border-gray-200 rounded-[32px] p-10 bg-[#FAFAFA] hover:border-[#C89B2D]/40 transition duration-500"
+          >
+            <!-- Number -->
+            <h3 class="text-6xl font-black text-[#111111] mb-5 tracking-[-2px]">
+              12+
+            </h3>
+
+            <!-- Title -->
+            <p
+              class="text-[#C89B2D] uppercase tracking-[3px] text-xs font-semibold mb-4"
+            >
+              Countries Reached
+            </p>
+
+            <!-- Description -->
+            <p class="text-gray-500 leading-relaxed">
+              Collaborating with modern businesses and creative brands across
+              international markets.
+            </p>
           </div>
-          <div class="bg-primary rounded-2xl p-7 text-white">
-            <h3 class="text-4xl font-black mb-1">50+</h3>
-            <p class="text-orange-100 text-sm">Awards Won</p>
+
+          <!-- Card -->
+          <div
+            class="fade-up stagger-3 group border border-gray-200 rounded-[32px] p-10 bg-[#FAFAFA] hover:border-[#C89B2D]/40 transition duration-500"
+          >
+            <!-- Number -->
+            <h3 class="text-6xl font-black text-[#111111] mb-5 tracking-[-2px]">
+              98%
+            </h3>
+
+            <!-- Title -->
+            <p
+              class="text-[#C89B2D] uppercase tracking-[3px] text-xs font-semibold mb-4"
+            >
+              Client Satisfaction
+            </p>
+
+            <!-- Description -->
+            <p class="text-gray-500 leading-relaxed">
+              Building long-term creative partnerships through quality-focused
+              design solutions.
+            </p>
+          </div>
+
+          <!-- Card -->
+          <div
+            class="fade-up stagger-4 group border border-gray-200 rounded-[32px] p-10 bg-[#FAFAFA] hover:border-[#C89B2D]/40 transition duration-500"
+          >
+            <!-- Number -->
+            <h3 class="text-6xl font-black text-[#111111] mb-5 tracking-[-2px]">
+              5+
+            </h3>
+
+            <!-- Title -->
+            <p
+              class="text-[#C89B2D] uppercase tracking-[3px] text-xs font-semibold mb-4"
+            >
+              Years Experience
+            </p>
+
+            <!-- Description -->
+            <p class="text-gray-500 leading-relaxed">
+              Experience focused on branding, digital creativity, and modern
+              visual storytelling.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- CTA -->
-    <section class="py-20 bg-gradient-to-br from-primary via-accent to-primary">
-      <div class="max-w-4xl mx-auto px-6 text-center">
-        <h2 class="text-4xl font-black text-white mb-4">
-          Let's Create Something Amazing
-        </h2>
-        <p class="text-orange-100 mb-8 text-lg">
-          Ready to work with a team that truly cares about your vision?
-        </p>
-        <a
-          href="contact.html"
-          class="bg-white text-primary px-8 py-4 rounded-full font-bold text-sm hover:bg-gray-100 transition-all shadow-xl inline-block"
-          >Get In Touch →</a
+    <section class="bg-white py-24 overflow-hidden relative">
+      <!-- Soft Accent -->
+      <div
+        class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#C89B2D]/5 rounded-full blur-3xl"
+      ></div>
+
+      <div class="max-w-6xl mx-auto px-6 relative z-10">
+        <!-- CTA Wrapper -->
+        <div
+          class="grid lg:grid-cols-12 gap-10 items-center border border-gray-200 rounded-[40px] p-8 md:p-12 bg-[#FAFAFA]"
         >
+          <!-- Left Content -->
+          <div class="lg:col-span-8">
+            <!-- Small Label -->
+            <div class="cta-text flex items-center gap-4 mb-6">
+              <div class="w-10 h-[1px] bg-[#C89B2D]"></div>
+
+              <p
+                class="text-[#C89B2D] uppercase tracking-[4px] text-xs font-semibold"
+              >
+                Start a Collaboration
+              </p>
+            </div>
+
+            <!-- Heading -->
+            <h2
+              class="cta-text stagger-1 text-4xl md:text-5xl font-black text-[#111111] leading-[1.05] tracking-[-2px] mb-6 max-w-4xl"
+            >
+              Let’s build a
+              <span class="text-[#C89B2D]"> meaningful brand experience </span>
+              together.
+            </h2>
+
+            <!-- Description -->
+            <p class="cta-text stagger-2 text-gray-500 text-lg leading-relaxed max-w-2xl">
+              Thoughtful branding and modern visual systems crafted to help your
+              business communicate with clarity and confidence.
+            </p>
+          </div>
+
+          <!-- Right Side -->
+          <div class="lg:col-span-4 flex lg:justify-end">
+            <div class="cta-text stagger-3 flex flex-col gap-4 w-full lg:w-auto">
+              <!-- Primary Button -->
+              <a
+                href="contact.html"
+                class="group inline-flex items-center justify-center gap-3 bg-[#111111] text-white px-7 py-4 rounded-full font-semibold hover:bg-[#C89B2D] hover:text-black transition duration-300"
+              >
+                Start Project
+
+                <i
+                  class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"
+                ></i>
+              </a>
+
+              <!-- Secondary Button -->
+              <a
+                href="portfolio.html"
+                class="inline-flex items-center justify-center gap-3 border border-gray-300 text-[#111111] px-7 py-4 rounded-full font-semibold hover:border-[#C89B2D] hover:text-[#C89B2D] transition duration-300"
+              >
+                View Portfolio
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1173,10 +1276,6 @@
       </div>
     </footer>
 
-    <script>
-      document.getElementById("hamburger").addEventListener("click", () => {
-        document.getElementById("mobileMenu").classList.toggle("hidden");
-      });
-    </script>
+    <script src="animations.js"></script>
   </body>
 </html>
