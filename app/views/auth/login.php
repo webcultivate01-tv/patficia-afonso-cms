@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Admin Login – PatriDesigns</title>
+
+  <title>PAGraphics — Admin Login</title>
 
   <!-- Fonts -->
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet"
   />
 
@@ -18,26 +19,37 @@
   />
 
   <style>
+
     *{
       margin:0;
       padding:0;
       box-sizing:border-box;
     }
 
+    html{
+      scroll-behavior:smooth;
+    }
+
     body{
       font-family:'Inter',sans-serif;
-      background:#050505;
+
       min-height:100vh;
+
+      background:#050505;
+
       overflow:hidden;
-      position:relative;
+
       display:flex;
       align-items:center;
       justify-content:center;
+
       padding:30px;
+
+      position:relative;
     }
 
     /* =========================
-       BACKGROUND
+       BACKGROUND GRID
     ========================= */
 
     .bg-grid{
@@ -50,8 +62,13 @@
 
       background-size:60px 60px;
 
-      mask-image:radial-gradient(circle at center, black 20%, transparent 80%);
+      mask-image:
+      radial-gradient(circle at center, black 20%, transparent 80%);
     }
+
+    /* =========================
+       GLOW EFFECT
+    ========================= */
 
     .bg-glow{
       position:absolute;
@@ -61,24 +78,26 @@
 
       border-radius:50%;
 
-      background:rgba(240,192,58,0.15);
+      background:
+      rgba(240,192,58,0.14);
 
       filter:blur(120px);
 
-      animation:floatGlow 8s ease-in-out infinite alternate;
+      animation:
+      glowFloat 8s ease-in-out infinite alternate;
     }
 
     .glow-1{
-      top:-120px;
-      left:-100px;
+      top:-150px;
+      left:-120px;
     }
 
     .glow-2{
-      bottom:-150px;
+      bottom:-180px;
       right:-120px;
     }
 
-    @keyframes floatGlow{
+    @keyframes glowFloat{
       from{
         transform:translateY(0px);
       }
@@ -97,24 +116,34 @@
       z-index:10;
 
       width:100%;
-      max-width:520px;
+      max-width:560px;
 
-      background:rgba(255,255,255,0.04);
+      background:
+      linear-gradient(
+        180deg,
+        rgba(255,255,255,0.06),
+        rgba(255,255,255,0.03)
+      );
 
-      backdrop-filter:blur(20px);
+      backdrop-filter:blur(24px);
 
-      border:1px solid rgba(255,255,255,0.08);
+      border:
+      1px solid rgba(255,255,255,0.08);
 
-      border-radius:36px;
+      border-radius:42px;
 
-      padding:50px;
+      padding:54px;
+
+      overflow:hidden;
 
       box-shadow:
-      0 30px 80px rgba(0,0,0,0.45);
+      0 40px 120px rgba(0,0,0,0.45);
 
-      animation:cardReveal 1.1s cubic-bezier(0.22,1,0.36,1) forwards;
+      animation:
+      cardReveal 1.1s cubic-bezier(0.22,1,0.36,1) forwards;
 
       opacity:0;
+
       transform:translateY(40px);
     }
 
@@ -123,6 +152,29 @@
         opacity:1;
         transform:translateY(0);
       }
+    }
+
+    /* =========================
+       CARD GLOW
+    ========================= */
+
+    .login-card::before{
+      content:"";
+
+      position:absolute;
+
+      top:-100px;
+      right:-100px;
+
+      width:240px;
+      height:240px;
+
+      border-radius:50%;
+
+      background:
+      rgba(240,192,58,0.12);
+
+      filter:blur(80px);
     }
 
     /* =========================
@@ -148,6 +200,7 @@
 
     .login-back:hover{
       color:#F0C03A;
+
       transform:translateX(-4px);
     }
 
@@ -156,13 +209,16 @@
     ========================= */
 
     .login-logo{
-      font-size:42px;
+      font-size:46px;
       font-weight:900;
+
       color:white;
 
-      margin-bottom:18px;
-
       letter-spacing:-2px;
+
+      line-height:1;
+
+      margin-bottom:42px;
     }
 
     .login-logo span{
@@ -173,26 +229,44 @@
        HEADING
     ========================= */
 
-    h2{
+    .login-label{
+      color:#F0C03A;
+
+      text-transform:uppercase;
+
+      letter-spacing:4px;
+
+      font-size:11px;
+
+      font-weight:700;
+
+      margin-bottom:18px;
+    }
+
+    .login-heading{
       color:white;
 
-      font-size:42px;
+      font-size:56px;
+
       font-weight:900;
 
-      line-height:1;
+      line-height:0.92;
 
-      margin-bottom:16px;
+      letter-spacing:-3px;
 
-      letter-spacing:-2px;
+      margin-bottom:20px;
     }
 
     .login-sub{
       color:#9ca3af;
 
       font-size:16px;
-      line-height:1.7;
 
-      margin-bottom:40px;
+      line-height:1.8;
+
+      max-width:420px;
+
+      margin-bottom:42px;
     }
 
     /* =========================
@@ -200,9 +274,11 @@
     ========================= */
 
     .login-error{
-      background:rgba(239,68,68,0.08);
+      background:
+      rgba(239,68,68,0.08);
 
-      border:1px solid rgba(239,68,68,0.2);
+      border:
+      1px solid rgba(239,68,68,0.2);
 
       color:#fca5a5;
 
@@ -226,76 +302,98 @@
     .login-form{
       display:flex;
       flex-direction:column;
-      gap:30px;
+
+      gap:28px;
     }
 
-    .login-field label{
+    /* =========================
+       LABEL
+    ========================= */
+
+    .form-label{
       display:block;
 
       color:#d1d5db;
 
       font-size:11px;
+
       font-weight:600;
 
       text-transform:uppercase;
 
       letter-spacing:3px;
 
-      margin-bottom:18px;
+      margin-bottom:14px;
     }
 
     /* =========================
        INPUT WRAP
     ========================= */
 
-    .login-input-wrap{
+    .form-input-wrap{
       position:relative;
 
-      border-bottom:
-      1px solid rgba(255,255,255,0.1);
+      height:66px;
 
-      transition:all .4s ease;
+      background:
+      rgba(255,255,255,0.03);
+
+      border:
+      1px solid rgba(255,255,255,0.08);
+
+      border-radius:18px;
+
+      overflow:hidden;
+
+      transition:
+      all .4s ease;
     }
 
-    .login-input-wrap::after{
-      content:"";
+    .form-input-wrap:hover{
+      background:
+      rgba(255,255,255,0.05);
+    }
 
+    .form-input-wrap:focus-within{
+      border-color:
+      rgba(240,192,58,0.45);
+
+      transform:translateY(-2px);
+
+      box-shadow:
+      0 10px 30px rgba(240,192,58,0.08);
+    }
+
+    /* =========================
+       ICON
+    ========================= */
+
+    .form-icon{
       position:absolute;
 
-      left:0;
-      bottom:-1px;
-
-      width:0%;
-      height:1px;
-
-      background:#F0C03A;
-
-      transition:width .5s cubic-bezier(0.22,1,0.36,1);
-    }
-
-    .login-input-wrap:focus-within::after{
-      width:100%;
-    }
-
-    .login-input-wrap i{
-      position:absolute;
-
-      left:0;
+      left:22px;
       top:50%;
 
       transform:translateY(-50%);
 
       color:#6b7280;
 
+      font-size:14px;
+
       transition:all .4s ease;
     }
 
-    .login-input-wrap:focus-within i{
+    .form-input-wrap:focus-within .form-icon{
       color:#F0C03A;
     }
 
-    .login-input-wrap input{
+    /* =========================
+       INPUT
+    ========================= */
+
+    .form-input{
       width:100%;
+      height:100%;
 
       background:transparent;
 
@@ -303,16 +401,65 @@
       outline:none;
 
       padding:
-      0 0 18px 34px;
+      0 22px 0 56px;
 
       color:white;
 
-      font-size:16px;
+      font-size:15px;
       font-weight:500;
     }
 
-    .login-input-wrap input::placeholder{
+    .form-input::placeholder{
       color:#6b7280;
+    }
+
+    /* =========================
+       OPTIONS
+    ========================= */
+
+    .form-options{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+
+      gap:20px;
+
+      margin-top:-4px;
+    }
+
+    .remember-wrap{
+      display:flex;
+      align-items:center;
+
+      gap:10px;
+
+      color:#9ca3af;
+
+      font-size:14px;
+
+      cursor:pointer;
+    }
+
+    .remember-wrap input{
+      accent-color:#F0C03A;
+
+      width:16px;
+      height:16px;
+    }
+
+    .forgot-link{
+      color:#F0C03A;
+
+      text-decoration:none;
+
+      font-size:14px;
+      font-weight:500;
+
+      transition:opacity .4s ease;
+    }
+
+    .forgot-link:hover{
+      opacity:.7;
     }
 
     /* =========================
@@ -322,7 +469,7 @@
     .login-btn{
       margin-top:10px;
 
-      height:62px;
+      height:66px;
 
       border:none;
 
@@ -340,6 +487,7 @@
       display:flex;
       align-items:center;
       justify-content:center;
+
       gap:14px;
 
       transition:
@@ -349,12 +497,14 @@
     }
 
     .login-btn:hover{
-      transform:translateY(-4px);
+      transform:
+      translateY(-4px)
+      scale(1.01);
+
+      background:#ffd95c;
 
       box-shadow:
       0 20px 40px rgba(240,192,58,0.25);
-
-      background:#ffd95c;
     }
 
     .login-btn i{
@@ -376,16 +526,26 @@
       }
 
       .login-card{
-        padding:36px 28px;
-        border-radius:28px;
+        padding:38px 28px;
+
+        border-radius:32px;
       }
 
       .login-logo{
-        font-size:34px;
+        font-size:38px;
       }
 
-      h2{
-        font-size:34px;
+      .login-heading{
+        font-size:42px;
+      }
+
+      .login-sub{
+        font-size:15px;
+      }
+
+      .form-options{
+        flex-direction:column;
+        align-items:flex-start;
       }
     }
 
@@ -411,16 +571,20 @@
 
     <!-- Logo -->
     <div class="login-logo">
-      Patri<span>Designs</span>
+      <span>PA</span>Graphics
     </div>
 
     <!-- Heading -->
-    <h2>
-      Admin Login
-    </h2>
+    <p class="login-label">
+      Secure Access
+    </p>
+
+    <h1 class="login-heading">
+      Studio Admin Panel
+    </h1>
 
     <p class="login-sub">
-      Secure access to the creative dashboard and project management panel.
+      Access the PAGraphics dashboard, client projects, and creative management system.
     </p>
 
     <!-- PHP Error -->
@@ -432,48 +596,86 @@
     <?php endif; ?>
 
     <!-- Form -->
-    <form method="POST" action="index.php?page=login" class="login-form">
+    <form
+      method="POST"
+      action="index.php?page=login"
+      class="login-form"
+    >
 
       <!-- Email -->
-      <div class="login-field">
-        <label>Email Address</label>
+      <div>
 
-        <div class="login-input-wrap">
-          <i class="fas fa-envelope"></i>
+        <label class="form-label">
+          Email Address
+        </label>
+
+        <div class="form-input-wrap">
+
+          <i class="fas fa-envelope form-icon"></i>
 
           <input
             type="email"
             name="email"
-            placeholder="admin@patridesigns.com"
+            placeholder="admin@pagraphics.com"
+            class="form-input"
             required
             autofocus
           />
+
         </div>
       </div>
 
       <!-- Password -->
-      <div class="login-field">
-        <label>Password</label>
+      <div>
 
-        <div class="login-input-wrap">
-          <i class="fas fa-lock"></i>
+        <label class="form-label">
+          Password
+        </label>
+
+        <div class="form-input-wrap">
+
+          <i class="fas fa-lock form-icon"></i>
 
           <input
             type="password"
             name="password"
-            placeholder="••••••••"
+            placeholder="Enter your password"
+            class="form-input"
             required
           />
+
         </div>
       </div>
 
+      <!-- Options -->
+      <div class="form-options">
+
+        <label class="remember-wrap">
+
+          <input type="checkbox"/>
+
+          <span>Remember me</span>
+
+        </label>
+
+        <a href="#" class="forgot-link">
+          Forgot Password?
+        </a>
+
+      </div>
+
       <!-- Button -->
-      <button type="submit" class="login-btn">
-        Sign In
+      <button
+        type="submit"
+        class="login-btn"
+      >
+        <span>Sign In</span>
+
         <i class="fas fa-arrow-right"></i>
       </button>
 
     </form>
+
   </div>
 
 </body>
