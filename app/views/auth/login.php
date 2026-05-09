@@ -6,13 +6,13 @@
 
   <title>PAGraphics — Admin Login</title>
 
-  <!-- Fonts -->
+  <!-- Google Font -->
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet"
   />
 
-  <!-- Icons -->
+  <!-- Font Awesome -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -37,15 +37,16 @@
 
       background:#050505;
 
-      overflow:hidden;
+      overflow-y:auto;
+      overflow-x:hidden;
+
+      position:relative;
 
       display:flex;
       align-items:center;
       justify-content:center;
 
-      padding:30px;
-
-      position:relative;
+      padding:40px 20px;
     }
 
     /* =========================
@@ -67,7 +68,7 @@
     }
 
     /* =========================
-       GLOW EFFECT
+       GLOW
     ========================= */
 
     .bg-glow{
@@ -79,7 +80,7 @@
       border-radius:50%;
 
       background:
-      rgba(240,192,58,0.14);
+      rgba(240,192,58,0.12);
 
       filter:blur(120px);
 
@@ -88,7 +89,7 @@
     }
 
     .glow-1{
-      top:-150px;
+      top:-160px;
       left:-120px;
     }
 
@@ -132,7 +133,7 @@
 
       border-radius:42px;
 
-      padding:54px;
+      padding:48px;
 
       overflow:hidden;
 
@@ -193,7 +194,7 @@
       font-size:14px;
       font-weight:500;
 
-      margin-bottom:50px;
+      margin-bottom:42px;
 
       transition:all .4s ease;
     }
@@ -209,7 +210,7 @@
     ========================= */
 
     .login-logo{
-      font-size:46px;
+      font-size:44px;
       font-weight:900;
 
       color:white;
@@ -218,7 +219,7 @@
 
       line-height:1;
 
-      margin-bottom:42px;
+      margin-bottom:38px;
     }
 
     .login-logo span{
@@ -240,13 +241,13 @@
 
       font-weight:700;
 
-      margin-bottom:18px;
+      margin-bottom:16px;
     }
 
     .login-heading{
       color:white;
 
-      font-size:56px;
+      font-size:52px;
 
       font-weight:900;
 
@@ -254,19 +255,19 @@
 
       letter-spacing:-3px;
 
-      margin-bottom:20px;
+      margin-bottom:18px;
     }
 
     .login-sub{
       color:#9ca3af;
 
-      font-size:16px;
+      font-size:15px;
 
       line-height:1.8;
 
       max-width:420px;
 
-      margin-bottom:42px;
+      margin-bottom:36px;
     }
 
     /* =========================
@@ -286,7 +287,7 @@
 
       border-radius:18px;
 
-      margin-bottom:30px;
+      margin-bottom:24px;
 
       display:flex;
       align-items:center;
@@ -303,7 +304,7 @@
       display:flex;
       flex-direction:column;
 
-      gap:28px;
+      gap:24px;
     }
 
     /* =========================
@@ -333,7 +334,7 @@
     .form-input-wrap{
       position:relative;
 
-      height:66px;
+      height:64px;
 
       background:
       rgba(255,255,255,0.03);
@@ -423,8 +424,6 @@
       justify-content:space-between;
 
       gap:20px;
-
-      margin-top:-4px;
     }
 
     .remember-wrap{
@@ -467,9 +466,11 @@
     ========================= */
 
     .login-btn{
-      margin-top:10px;
+      margin-top:8px;
 
-      height:66px;
+      width:100%;
+
+      height:64px;
 
       border:none;
 
@@ -516,36 +517,43 @@
     }
 
     /* =========================
-       RESPONSIVE
+       MOBILE
     ========================= */
 
     @media(max-width:768px){
 
       body{
-        padding:20px;
+        padding:24px 16px;
       }
 
       .login-card{
-        padding:38px 28px;
+        padding:34px 24px;
 
-        border-radius:32px;
+        border-radius:30px;
       }
 
       .login-logo{
-        font-size:38px;
+        font-size:36px;
       }
 
       .login-heading{
-        font-size:42px;
+        font-size:40px;
       }
 
       .login-sub{
-        font-size:15px;
+        font-size:14px;
+        line-height:1.7;
       }
 
       .form-options{
         flex-direction:column;
         align-items:flex-start;
+
+        gap:14px;
+      }
+
+      .login-btn{
+        height:60px;
       }
     }
 
